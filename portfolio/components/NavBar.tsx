@@ -11,7 +11,7 @@ function NavBar({}: Props) {
           <span>Portfolio</span>
         </a>
 
-        <div className=" bg-red flex gap-4 hidden md:flex" id="navbar-sticky">
+        <div className=" bg-red flex gap-8 hidden md:flex" id="navbar-sticky">
           <ul className=" flex-col md:flex-row">
             <li>
               <a href="#" className="text-base font-medium ">

@@ -20,9 +20,31 @@ import { FaEthereum, FaSchool, FaBriefcase } from "react-icons/fa";
 import AboutMe from "../public/images/AboutMe.png";
 import { useState } from "react";
 import Form from "@/components/Form";
+import Project from "@/components/Project";
 
 export default function Home() {
-  const icoName = [FaFacebookSquare, FaLinkedinIn, FaXTwitter, FaDiscord];
+  const socialLinks = [
+    {
+      name: "Facebook",
+      icon: FaFacebookSquare,
+      url: "https://facebook.com/yourFacebookHandle",
+    },
+    {
+      name: "LinkedIn",
+      icon: FaLinkedinIn,
+      url: "https://www.linkedin.com/in/aashutosh-gandotra/",
+    },
+    {
+      name: "Twitter",
+      icon: FaXTwitter,
+      url: "https://twitter.com/yourTwitterHandle",
+    },
+    {
+      name: "Discord",
+      icon: FaDiscord,
+      url: "https://discordapp.com/users/yourDiscordHandle",
+    },
+  ];
   const skillsName = [
     { icon: FaGitSquare, name: "Git" },
     { icon: FaReact, name: "React" },
@@ -73,9 +95,28 @@ export default function Home() {
     },
   ];
 
+  const projects = [
+    {
+      number: "01",
+      title: "All Cures",
+      description:
+        "Developed 'All Cures,' a comprehensive healthcare app offering diverse healing resources, direct doctor consultations, and community engagement...",
+      link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
+      image: "/images/project1.png",
+    },
+    {
+      number: "02",
+      title: "GenZ Express",
+      description:
+        "Built 'GenZ Express,' a full-stack e-commerce application. Implemented secure payment integration, wishlist feature, and smooth animations for an enhanced user experience...",
+      link: "https://github.com/Aashu-crypto/ecommerce",
+      image: "/images/project2.png",
+    },
+  ];
+
   return (
-    <div className=" flex h-screen flex-col p-5  ">
-      <div className="md:flex-row flex w-full flex-col ">
+    <div className=" flex h-screen flex-col  ">
+      <div className="md:flex-row flex w-full flex-col p-14">
         <div className=" w-full md:w-1/2 items-center md:order-2 h-auto ">
           <ResponsiveSVG className="w-full h-auto max-w-lg md:max-w-md lg:max-w-lg" />
         </div>
@@ -99,12 +140,20 @@ export default function Home() {
             contribute expertise in a collaborative environment to develop
             cutting-edge solutions.
           </div>
-          <div className="flex flex-row justify-around">
-            {icoName.map((Item, index) => {
+          <div className="flex flex-row justify-around max-w-60">
+            {socialLinks.map((Item, index) => {
               return (
-                <div className=" flex-col border-2 p-5 bg-black" key={index}>
-                  <Item size={"30"} color="white" />
-                </div>
+                <a href={Item.url}>
+                  <div
+                    className=" flex-col  bg-white hover:bg-black border-2 border-black p-1 rounded-md"
+                    key={index}
+                  >
+                    <Item.icon
+                      size={"25"}
+                      className=" text-black hover:text-white "
+                    />
+                  </div>
+                </a>
               );
             })}
           </div>
@@ -115,10 +164,13 @@ export default function Home() {
           My<div className="font-sans ml-2 font-semibold"> {"  "}Skills</div>
         </div>
         <div className="flex-row flex flex-wrap justify-center ">
-          {skillsName.map((Item,index) => {
+          {skillsName.map((Item, index) => {
             return (
-              <div key={index} className=" flex-row border-2 p-5 bg-white m-7 hover:bg-slate-600 border-black md:p-12 md:m-10 justify-center items-center text-center">
-                <Item.icon size="70" color="black" />
+              <div
+                key={index}
+                className=" flex-row border-2 p-5 bg-white m-7 hover:bg-slate-100 border-black md:p-10 md:m-10 justify-center items-center text-center"
+              >
+                <Item.icon size="65" color="black" />
                 <span className="mt-10 my-6 text-sm">{Item.name}</span>
               </div>
             );
@@ -128,9 +180,12 @@ export default function Home() {
 
       <div className="bg-black text-white p-8">
         <h2 className="text-3xl font-bold mb-8 text-center">My Experience</h2>
-        {experiences.map((Exp,index) => {
+        {experiences.map((Exp, index) => {
           return (
-            <div className=" text-white border border-gray-600 rounded-lg p-5 m-5 " key={index}>
+            <div
+              className=" text-white border border-gray-600 rounded-lg p-5 m-5 "
+              key={index}
+            >
               <div className="flex flex-row justify-between">
                 <div className=" flex flex-row gap-10">
                   <div>{Exp.icon}</div>
@@ -150,7 +205,7 @@ export default function Home() {
         })}
       </div>
 
-      <div className="mt-10 md:grid md:grid-cols-2 ">
+      <div className="mt-10 md:grid md:grid-cols-2  p-14">
         <div>
           <Image
             src="/images/AboutMe.png"
@@ -160,30 +215,36 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col">
-          <div>About Me</div>
-          <div className=" h-4/5 flex flex-col justify-around ">
+          <div className=" text-3xl my-3 flex-row flex text-black  justify-center">
+            About <div className="font-sans ml-2 font-semibold"> {"  "}Me</div>
+          </div>
+          <div className=" h-4/5 flex flex-col justify-around text-xs my-8 leading-6 font-normal ">
             <p>
-              I&apos;m passionate, self-proclaimed designer who specializes in
-              full stack development (React.js & Node.js). I am very
-              enthusiastic about bringing the technical and visual aspects of
-              digital products to life. User experience, pixel perfect design,
-              and writing clear, readable, highly performant code matters to me.
+              I&apos;m a React Native developer with 2+ years of work
+              experience, including a dedicated focus on React Native
+              development for the past year. My passion lies in building
+              intuitive and engaging mobile experiences. I&apos;m well-versed in
+              core React Native concepts, state management with Redux, and
+              integrating complex features like WebRTC and WebSockets for
+              real-time communication capabilities. My proficiency in JavaScript
+              allows me to write clean, maintainable, and performant code.
             </p>
             <p>
-              I began my journey as a web developer in 2015, and since then,
-              I&apos;ve continued to grow and evolve as a developer, taking on new
-              challenges and learning the latest technologies along the way.
-              Now, in my early thirties, 7 years after starting my web
-              development journey, I&apos;m building cutting-edge web applications
-              using modern technologies such as Next.js, TypeScript, Nestjs,
-              Tailwindcss, Supabase and much more.
+              My portfolio showcases my abilities, with projects like "AllCures"
+              (available on both Android and iOS) demonstrating my expertise in
+              developing cross-platform healthcare solutions. Additionally, my
+              full-stack experience building an e-commerce application using
+              Node.js, Express, and MongoDB highlights my adaptability and
+              end-to-end development skills.
             </p>
             <p>
-              When I&apos;m not in full-on developer mode, you can find me hovering
-              around on twitter or on indie hacker, witnessing the journey of
-              early startups or enjoying some free time. You can follow me on
-              Twitter where I share tech-related bites and build in public, or
-              you can follow me on GitHub.
+              Beyond my technical abilities, I possess strong problem-solving
+              skills, attention to detail, and the ability to translate complex
+              requirements into user-friendly interfaces. I'm a collaborative
+              team player, always eager to learn and share knowledge within a
+              dynamic development environment. If you're seeking a
+              results-oriented React Native developer passionate about creating
+              impactful mobile applications, let's connect!
             </p>
           </div>
         </div>
@@ -192,6 +253,25 @@ export default function Home() {
         {/* <div className=" text-3xl my-3 flex-row flex text-center">
           My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
         </div> */}
+      </div>
+      <div className=" bg-black ">
+        <div className=" text-3xl my-3 flex-row flex text-white  justify-center">
+          My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
+        </div>
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-4xl font-bold text-center mb-8">My Projects</h1>
+          {projects.map((project, index) => (
+            <Project
+              key={project.number}
+              index={index}
+              number={project.number}
+              title={project.title}
+              description={project.description}
+              link={project.link}
+              image={project.image}
+            />
+          ))}
+        </div>
       </div>
       <Form />
     </div>

@@ -65,11 +65,8 @@ export default function Home() {
       duration: "July 2023 - Present",
       location: "Jammu, India",
       icon: <FaEthereum />,
-      details: [
-        "Developed 'All Cures' healthcare app, leveraging WebRTC, WebSockets, and Redux to deliver real-time communication features and a seamless user experience.",
-        "Implemented secure payment processing (CCAvenue), ensuring a safe and convenient user journey.",
-        "Contributed to a 20% increase in user engagement within the first month of the app's launch.",
-      ],
+      details:
+        "I developed the 'All Cures' healthcare app, leveraging WebRTC, WebSockets, and Redux to deliver real-time communication features and a seamless user experience. Additionally, I implemented secure payment processing using CCAvenue, ensuring a safe and convenient user journey. My efforts contributed to a 20% increase in user engagement within the first month of the app's launch.",
     },
     {
       company: "Ministry of Education, Government of India",
@@ -77,11 +74,8 @@ export default function Home() {
       duration: "April 2022 - July 2023",
       location: "Jammu, India",
       icon: <FaSchool />,
-      details: [
-        "Designed and implemented a comprehensive C++ curriculum for 11th and 12th-grade students, integrating theoretical concepts with practical programming exercises.",
-        "Provided personalized guidance and support to enhance students' coding skills, problem-solving abilities, and critical thinking.",
-        "Led student projects, fostering creativity, technical expertise, and collaborative work, contributing to improved student performance in C++ programming.",
-      ],
+      details:
+        "I designed and implemented a comprehensive C++ curriculum tailored for 11th and 12th-grade students, which seamlessly integrated theoretical concepts with practical programming exercises. Through personalized guidance and support, I focused on enhancing students' coding skills, problem-solving abilities, and critical thinking. As a leader of student projects, I fostered an environment that encouraged creativity, technical expertise, and collaborative work, significantly contributing to improved student performance in C++ programming.",
     },
     {
       company: "Pie Infocomm Pvt. Ltd",
@@ -143,11 +137,8 @@ export default function Home() {
           <div className="flex flex-row justify-around max-w-60">
             {socialLinks.map((Item, index) => {
               return (
-                <a href={Item.url}    key={index}>
-                  <div
-                    className=" flex-col  bg-white hover:bg-black border-2 border-black p-1 rounded-md"
-                 
-                  >
+                <a href={Item.url} key={index}>
+                  <div className=" flex-col  bg-white hover:bg-black border-2 border-black p-1 rounded-md">
                     <Item.icon
                       size={"25"}
                       className=" text-black hover:text-white "
@@ -183,23 +174,19 @@ export default function Home() {
         {experiences.map((Exp, index) => {
           return (
             <div
-              className=" text-white border border-gray-600 rounded-lg p-5 m-5 "
+              className=" text-white border border-gray-600 rounded-lg p-5 m-5 space-y-4 "
               key={index}
             >
-              <div className="flex flex-row justify-between">
-                <div className=" flex flex-row gap-10">
+              <div className="flex flex-col md:flex-row justify-between">
+                <div className=" flex flex-row items-center gap-5">
                   <div>{Exp.icon}</div>
-                  <div>
+                  <div className="font-semibold">
                     {Exp.role} at {Exp.company}
                   </div>
                 </div>
-                <div className=" justify-end flex">{Exp.duration}</div>
+                <div className=" md:justify-end flex">{Exp.duration}</div>
               </div>
-              {Exp.details.map((detail, i) => (
-                <li key={i} className="mb-2">
-                  {detail}
-                </li>
-              ))}
+              <p className="mb-2 text-slate-100">{Exp.details}</p>
             </div>
           );
         })}
@@ -230,21 +217,21 @@ export default function Home() {
               allows me to write clean, maintainable, and performant code.
             </p>
             <p>
-              My portfolio showcases my abilities, with projects like &quot;AllCures&quot;
-              (available on both Android and iOS) demonstrating my expertise in
-              developing cross-platform healthcare solutions. Additionally, my
-              full-stack experience building an e-commerce application using
-              Node.js, Express, and MongoDB highlights my adaptability and
-              end-to-end development skills.
+              My portfolio showcases my abilities, with projects like
+              &quot;AllCures&quot; (available on both Android and iOS)
+              demonstrating my expertise in developing cross-platform healthcare
+              solutions. Additionally, my full-stack experience building an
+              e-commerce application using Node.js, Express, and MongoDB
+              highlights my adaptability and end-to-end development skills.
             </p>
             <p>
               Beyond my technical abilities, I possess strong problem-solving
               skills, attention to detail, and the ability to translate complex
-              requirements into user-friendly interfaces. I&apos;m a collaborative
-              team player, always eager to learn and share knowledge within a
-              dynamic development environment. If you&apos;re seeking a
-              results-oriented React Native developer passionate about creating
-              impactful mobile applications, let&apos;s connect!
+              requirements into user-friendly interfaces. I&apos;m a
+              collaborative team player, always eager to learn and share
+              knowledge within a dynamic development environment. If you&apos;re
+              seeking a results-oriented React Native developer passionate about
+              creating impactful mobile applications, let&apos;s connect!
             </p>
           </div>
         </div>

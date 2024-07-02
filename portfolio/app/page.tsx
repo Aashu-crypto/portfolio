@@ -19,7 +19,7 @@ import { SiSocketdotio, SiRedux, SiWebrtc } from "react-icons/si";
 import { FaEthereum, FaSchool, FaBriefcase } from "react-icons/fa";
 import AboutMe from "../public/images/AboutMe.png";
 import { useState } from "react";
-import Form from "@/components/Form"
+import Form from "@/components/Form";
 
 export default function Home() {
   const icoName = [FaFacebookSquare, FaLinkedinIn, FaXTwitter, FaDiscord];
@@ -35,7 +35,7 @@ export default function Home() {
     { icon: SiRedux, name: "Redux" },
     { icon: SiWebrtc, name: "WebRTC" },
   ];
- 
+
   const experiences = [
     {
       company: "Etherium Technologies",
@@ -72,7 +72,7 @@ export default function Home() {
       ],
     },
   ];
-  
+
   return (
     <div className=" flex h-screen flex-col p-5  ">
       <div className="md:flex-row flex w-full flex-col ">
@@ -100,9 +100,9 @@ export default function Home() {
             cutting-edge solutions.
           </div>
           <div className="flex flex-row justify-around">
-            {icoName.map((Item) => {
+            {icoName.map((Item, index) => {
               return (
-                <div className=" flex-col border-2 p-5 bg-black">
+                <div className=" flex-col border-2 p-5 bg-black" key={index}>
                   <Item size={"30"} color="white" />
                 </div>
               );
@@ -115,9 +115,9 @@ export default function Home() {
           My<div className="font-sans ml-2 font-semibold"> {"  "}Skills</div>
         </div>
         <div className="flex-row flex flex-wrap justify-center ">
-          {skillsName.map((Item) => {
+          {skillsName.map((Item,index) => {
             return (
-              <div className=" flex-row border-2 p-5 bg-white m-7 hover:bg-slate-600 border-black md:p-12 md:m-10 justify-center items-center text-center">
+              <div key={index} className=" flex-row border-2 p-5 bg-white m-7 hover:bg-slate-600 border-black md:p-12 md:m-10 justify-center items-center text-center">
                 <Item.icon size="70" color="black" />
                 <span className="mt-10 my-6 text-sm">{Item.name}</span>
               </div>
@@ -128,9 +128,9 @@ export default function Home() {
 
       <div className="bg-black text-white p-8">
         <h2 className="text-3xl font-bold mb-8 text-center">My Experience</h2>
-        {experiences.map((Exp) => {
+        {experiences.map((Exp,index) => {
           return (
-            <div className=" text-white border border-gray-600 rounded-lg p-5 m-5 ">
+            <div className=" text-white border border-gray-600 rounded-lg p-5 m-5 " key={index}>
               <div className="flex flex-row justify-between">
                 <div className=" flex flex-row gap-10">
                   <div>{Exp.icon}</div>
@@ -163,23 +163,23 @@ export default function Home() {
           <div>About Me</div>
           <div className=" h-4/5 flex flex-col justify-around ">
             <p>
-              I'm a passionate, self-proclaimed designer who specializes in full
-              stack development (React.js & Node.js). I am very enthusiastic
-              about bringing the technical and visual aspects of digital
-              products to life. User experience, pixel perfect design, and
-              writing clear, readable, highly performant code matters to me.
+              I&apos;m passionate, self-proclaimed designer who specializes in
+              full stack development (React.js & Node.js). I am very
+              enthusiastic about bringing the technical and visual aspects of
+              digital products to life. User experience, pixel perfect design,
+              and writing clear, readable, highly performant code matters to me.
             </p>
             <p>
               I began my journey as a web developer in 2015, and since then,
-              I've continued to grow and evolve as a developer, taking on new
+              I&apos;ve continued to grow and evolve as a developer, taking on new
               challenges and learning the latest technologies along the way.
               Now, in my early thirties, 7 years after starting my web
-              development journey, I'm building cutting-edge web applications
+              development journey, I&apos;m building cutting-edge web applications
               using modern technologies such as Next.js, TypeScript, Nestjs,
               Tailwindcss, Supabase and much more.
             </p>
             <p>
-              When I'm not in full-on developer mode, you can find me hovering
+              When I&apos;m not in full-on developer mode, you can find me hovering
               around on twitter or on indie hacker, witnessing the journey of
               early startups or enjoying some free time. You can follow me on
               Twitter where I share tech-related bites and build in public, or
@@ -193,8 +193,7 @@ export default function Home() {
           My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
         </div> */}
       </div>
-      <Form/>
-      
+      <Form />
     </div>
   );
 }

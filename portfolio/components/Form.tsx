@@ -77,7 +77,7 @@ const Form = (props: Props) => {
         <div>
           {" "}
           <h1 className="font-bold text-4xl max-w-96 flex flex-row">
-            Let's <span className="mx-2 font-outline">talk</span>for
+            Let&apos;s <span className="mx-2 font-outline">talk</span>for
           </h1>
           <h1 className="font-bold text-4xl max-w-96 flex flex-row">
              Something Special

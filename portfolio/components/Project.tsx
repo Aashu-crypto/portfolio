@@ -1,4 +1,4 @@
-const Project = ({ index, number, title, description, link, image }) => {
+const Project = ({ index, number, title, description, link, image }:any) => {
     const isEven = index % 2 === 0;
   
     return (

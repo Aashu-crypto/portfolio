@@ -143,10 +143,10 @@ export default function Home() {
           <div className="flex flex-row justify-around max-w-60">
             {socialLinks.map((Item, index) => {
               return (
-                <a href={Item.url}>
+                <a href={Item.url}    key={index}>
                   <div
                     className=" flex-col  bg-white hover:bg-black border-2 border-black p-1 rounded-md"
-                    key={index}
+                 
                   >
                     <Item.icon
                       size={"25"}
@@ -230,7 +230,7 @@ export default function Home() {
               allows me to write clean, maintainable, and performant code.
             </p>
             <p>
-              My portfolio showcases my abilities, with projects like "AllCures"
+              My portfolio showcases my abilities, with projects like &quot;AllCures&quot;
               (available on both Android and iOS) demonstrating my expertise in
               developing cross-platform healthcare solutions. Additionally, my
               full-stack experience building an e-commerce application using
@@ -240,11 +240,11 @@ export default function Home() {
             <p>
               Beyond my technical abilities, I possess strong problem-solving
               skills, attention to detail, and the ability to translate complex
-              requirements into user-friendly interfaces. I'm a collaborative
+              requirements into user-friendly interfaces. I&apos;m a collaborative
               team player, always eager to learn and share knowledge within a
-              dynamic development environment. If you're seeking a
+              dynamic development environment. If you&apos;re seeking a
               results-oriented React Native developer passionate about creating
-              impactful mobile applications, let's connect!
+              impactful mobile applications, let&apos;s connect!
             </p>
           </div>
         </div>

@@ -18,6 +18,8 @@ import { IoLogoFirebase } from "react-icons/io5";
 import { SiSocketdotio, SiRedux, SiWebrtc } from "react-icons/si";
 import { FaEthereum, FaSchool, FaBriefcase } from "react-icons/fa";
 import AboutMe from "../public/images/AboutMe.png";
+import { useState } from "react";
+import Form from "@/components/Form"
 
 export default function Home() {
   const icoName = [FaFacebookSquare, FaLinkedinIn, FaXTwitter, FaDiscord];
@@ -33,7 +35,7 @@ export default function Home() {
     { icon: SiRedux, name: "Redux" },
     { icon: SiWebrtc, name: "WebRTC" },
   ];
-
+ 
   const experiences = [
     {
       company: "Etherium Technologies",
@@ -70,6 +72,7 @@ export default function Home() {
       ],
     },
   ];
+  
   return (
     <div className=" flex h-screen flex-col p-5  ">
       <div className="md:flex-row flex w-full flex-col ">
@@ -185,9 +188,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
-        <div>My Projects</div>
+      <div className="flex items-center justify-center">
+        {/* <div className=" text-3xl my-3 flex-row flex text-center">
+          My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
+        </div> */}
       </div>
+      <Form/>
+      
     </div>
   );
 }

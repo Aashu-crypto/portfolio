@@ -38,8 +38,8 @@ const Form = (props: Props) => {
     }
   };
   return (
-    <div className="md:grid md:grid-cols-2 mt-16 p-14">
-      <div>
+    <div className="md:grid md:grid-cols-2 mt-16 ">
+      <div className=" p-14">
         <form className="space-y-4">
           <input
             type="text"

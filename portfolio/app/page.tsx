@@ -66,7 +66,7 @@ export default function Home() {
       location: "Jammu, India",
       icon: <FaEthereum />,
       details:
-        "I developed the 'All Cures' healthcare app, leveraging WebRTC, WebSockets, and Redux to deliver real-time communication features and a seamless user experience. Additionally, I implemented secure payment processing using CCAvenue, ensuring a safe and convenient user journey. My efforts contributed to a 20% increase in user engagement within the first month of the app's launch.",
+        "If you're seeking a diverse approach to healthcare, All Cures is your go-to app. It features a wide range of articles on various healing systems, direct doctor consultations via video and chat, and community article submissions. Secure payments are handled through CCAvenue, ensuring safe transactions. The app leverages WebRTC, WebSockets, and Redux to provide a seamless, real-time experience, making it a comprehensive health companion that blends traditional and modern medical practices. ",
     },
     {
       company: "Ministry of Education, Government of India",
@@ -94,7 +94,7 @@ export default function Home() {
       number: "01",
       title: "All Cures",
       description:
-        "Developed 'All Cures,' a comprehensive healthcare app offering diverse healing resources, direct doctor consultations, and community engagement...",
+        "Seeking a more diverse approach to healthcare? My app All Cures offers.Articles on a wide range of healing systems Direct doctor consultations via video & chat Community article submission Secure payment integration (CCAvenue) Leveraging WebRTC, WebSockets, & Redux for a seamless experience",
       link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
       image: "/images/project1.png",
     },
@@ -102,7 +102,7 @@ export default function Home() {
       number: "02",
       title: "GenZ Express",
       description:
-        "Built 'GenZ Express,' a full-stack e-commerce application. Implemented secure payment integration, wishlist feature, and smooth animations for an enhanced user experience...",
+        "I have just wrapped up the development of GenZ Express a React Native e-commerce app tailored for the younger generation of shoppers. This project includes an intuitive product browsing and search function, secure payment integration, wishlist functionality, and smooth animations to enhance user experience. The backend, built with Mongoose and MongoDB, ensures reliable inventory and product data management, while Express.js handles secure user authentication and order processing. Optimized API calls guarantee a responsive app experience, and the entire system is designed with scalability in mind, leveraging JavaScript, Redux, and Firebase to deliver a seamless shopping experience.",
       link: "https://github.com/Aashu-crypto/ecommerce",
       image: "/images/project2.png",
     },
@@ -110,23 +110,25 @@ export default function Home() {
 
   return (
     <div className=" flex h-screen flex-col  ">
-      <div className="md:flex-row flex w-full flex-col p-14">
-        <div className=" w-full md:w-1/2 items-center md:order-2 h-auto ">
+      <div className="md:flex-row flex w-full flex-col p-5 md:p-14  ">
+        <div className=" w-full md:w-1/2 items-center md:order-2 h-auto flex justify-center ">
           <ResponsiveSVG className="w-full h-auto max-w-lg md:max-w-md lg:max-w-lg" />
         </div>
-        <div className=" w-full md:w-1/2 flex flex-col  ">
-          <div className="text-2xl flex ">
-            Hello I am{" "}
+        <div className=" w-full md:w-1/2 flex flex-col  font-sans mt-7 md:mt-4 ">
+          <div className="text-4xl flex flex-col md:flex-row">
+            <div className="flex justify-center md:justify-start">
+              Hello I am
+            </div>
             <div className="ml-2 font-extrabold">Aashutosh Gandotra.</div>
           </div>
-          <div className="font-outline text-4xl font-extrabold tracking-wider">
+          <div className="font-outline text-5xl font-extrabold tracking-wider">
             Frontend Developer
           </div>
-          <div className="text-2xl flex-row flex ">
+          <div className="text-4xl flex-row flex ">
             Based In <div className="font-extrabold ml-2">India.</div>
           </div>
 
-          <div className="text-xs my-8 leading-6 font-normal">
+          <div className="text-xs my-20 font-normal leading-6 text-slate-600">
             Highly skilled React Native Developer with over 1 year of experience
             in mobile application development. Proficient in JavaScript, Redux,
             Firebase, and WebRTC/WebSockets. Passionate about delivering
@@ -134,7 +136,7 @@ export default function Home() {
             contribute expertise in a collaborative environment to develop
             cutting-edge solutions.
           </div>
-          <div className="flex flex-row justify-around max-w-60">
+          <div className="flex flex-row justify-around max-w-60 mt-4">
             {socialLinks.map((Item, index) => {
               return (
                 <a href={Item.url} key={index}>

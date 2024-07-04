@@ -16,7 +16,7 @@ import { DiPostgresql } from "react-icons/di";
 import { SiNextdotjs } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiSocketdotio, SiRedux, SiWebrtc } from "react-icons/si";
-import { FaEthereum, FaSchool, FaBriefcase } from "react-icons/fa";
+import { FaEthereum, FaSchool, FaBriefcase ,FaGitAlt } from "react-icons/fa";
 import AboutMe from "../public/images/AboutMe.png";
 import { useState } from "react";
 import Form from "@/components/Form";
@@ -46,8 +46,7 @@ export default function Home() {
     },
   ];
   const skillsName = [
-    { icon: FaGitSquare, name: "Git" },
-    { icon: FaReact, name: "React" },
+    { icon: FaReact, name: "React Native" },
     { icon: IoLogoJavascript, name: "JavaScript" },
     { icon: FaNode, name: "Node.js" },
     { icon: DiPostgresql, name: "PostgreSQL" },
@@ -55,6 +54,7 @@ export default function Home() {
     { icon: IoLogoFirebase, name: "Firebase" },
     { icon: SiSocketdotio, name: "Socket.io" },
     { icon: SiRedux, name: "Redux" },
+    { icon: FaGitAlt , name: "Git" },
     { icon: SiWebrtc, name: "WebRTC" },
   ];
 
@@ -96,7 +96,8 @@ export default function Home() {
       description:
         "Seeking a more diverse approach to healthcare? My app All Cures offers.Articles on a wide range of healing systems Direct doctor consultations via video & chat Community article submission Secure payment integration (CCAvenue) Leveraging WebRTC, WebSockets, & Redux for a seamless experience",
       link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
-      image: "/images/project1.png",
+      image: "/images/AllCures.jpg",
+      live:true
     },
     {
       number: "02",
@@ -104,31 +105,32 @@ export default function Home() {
       description:
         "I have just wrapped up the development of GenZ Express a React Native e-commerce app tailored for the younger generation of shoppers. This project includes an intuitive product browsing and search function, secure payment integration, wishlist functionality, and smooth animations to enhance user experience. The backend, built with Mongoose and MongoDB, ensures reliable inventory and product data management, while Express.js handles secure user authentication and order processing. Optimized API calls guarantee a responsive app experience, and the entire system is designed with scalability in mind, leveraging JavaScript, Redux, and Firebase to deliver a seamless shopping experience.",
       link: "https://github.com/Aashu-crypto/ecommerce",
-      image: "/images/project2.png",
+      image: "/images/ecommerce.jpg",
+      live:false
     },
   ];
 
   return (
-    <div className=" flex h-screen flex-col  ">
+    <div className=" flex flex-col  ">
       <div className="md:flex-row flex w-full flex-col p-5 md:p-14  ">
-        <div className=" w-full md:w-1/2 items-center md:order-2 h-auto flex justify-center ">
-          <ResponsiveSVG className="w-full h-auto max-w-lg md:max-w-md lg:max-w-lg" />
+        <div className=" w-full md:w-1/2 items-center md:order-2 h-auto flex justify-center  md:justify-end">
+          <ResponsiveSVG className=" w-full " />
         </div>
-        <div className=" w-full md:w-1/2 flex flex-col  font-sans mt-7 md:mt-4 ">
-          <div className="text-4xl flex flex-col md:flex-row">
-            <div className="flex justify-center md:justify-start">
-              Hello I am
-            </div>
-            <div className="ml-2 font-extrabold">Aashutosh Gandotra.</div>
-          </div>
-          <div className="font-outline text-5xl font-extrabold tracking-wider">
+        <div className=" w-full md:w-1/2 flex flex-col  font-sans mt-7 md:mt-4    ">
+          <h1 className="justify-center md:justify-start text-2xl md:text-4xl  ">
+            Hello I am
+            <span className="font-extrabold"> Aashutosh Gandotra</span>
+          </h1>
+
+          <div className="font-outline text-4xl md:text-5xl font-extrabold tracking-wider leading-tight">
             Frontend Developer
           </div>
-          <div className="text-4xl flex-row flex ">
-            Based In <div className="font-extrabold ml-2">India.</div>
+          <div className=" text-2xl md:text-4xl flex-row flex ">
+            Based In{" "}
+            <div className="font-extrabold ml-2 leading-10">India.</div>
           </div>
 
-          <div className="text-xs my-20 font-normal leading-6 text-slate-600">
+          <div className="text-xs  my-20 font-normal leading-6 text-slate-600  mt-10">
             Highly skilled React Native Developer with over 1 year of experience
             in mobile application development. Proficient in JavaScript, Redux,
             Firebase, and WebRTC/WebSockets. Passionate about delivering
@@ -136,7 +138,7 @@ export default function Home() {
             contribute expertise in a collaborative environment to develop
             cutting-edge solutions.
           </div>
-          <div className="flex flex-row justify-around max-w-60 mt-4">
+          <div className="flex flex-row justify-around max-w-60 ">
             {socialLinks.map((Item, index) => {
               return (
                 <a href={Item.url} key={index}>
@@ -172,11 +174,13 @@ export default function Home() {
       </div>
 
       <div className="bg-black text-white p-8">
-        <h2 className="text-3xl font-bold mb-8 text-center">My Experience</h2>
+        <h2 className="text-3xl  mb-8 text-center">
+          My <span className="font-sans ml-2 font-semibold">Experience</span>
+        </h2>
         {experiences.map((Exp, index) => {
           return (
             <div
-              className=" text-white border border-gray-600 rounded-lg p-5 m-5 space-y-4 "
+              className=" text-white border border-gray-600 rounded-lg p-5 my-5 space-y-4 "
               key={index}
             >
               <div className="flex flex-col md:flex-row justify-between">
@@ -186,7 +190,7 @@ export default function Home() {
                     {Exp.role} at {Exp.company}
                   </div>
                 </div>
-                <div className=" md:justify-end flex">{Exp.duration}</div>
+                <div className=" md:justify-end flex justify-center">{Exp.duration}</div>
               </div>
               <p className="mb-2 text-slate-100">{Exp.details}</p>
             </div>
@@ -194,7 +198,7 @@ export default function Home() {
         })}
       </div>
 
-      <div className="mt-10 md:grid md:grid-cols-2  p-14">
+      <div className="mt-10 md:grid md:grid-cols-2  p-10 md:p-14">
         <div>
           <Image
             src="/images/AboutMe.png"
@@ -207,7 +211,7 @@ export default function Home() {
           <div className=" text-3xl my-3 flex-row flex text-black  justify-center">
             About <div className="font-sans ml-2 font-semibold"> {"  "}Me</div>
           </div>
-          <div className=" h-4/5 flex flex-col justify-around text-xs my-8 leading-6 font-normal ">
+          <div className=" h-4/5 flex flex-col justify-around text-xs my-8 leading-6 font-normal space-y-2">
             <p>
               I&apos;m a React Native developer with 2+ years of work
               experience, including a dedicated focus on React Native
@@ -244,11 +248,10 @@ export default function Home() {
         </div> */}
       </div>
       <div className=" bg-black ">
-        <div className=" text-3xl my-3 flex-row flex text-white  justify-center">
+        <div className=" text-3xl my-3 flex-row flex text-white  justify-center mt-10">
           My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
         </div>
-        <div className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold text-center mb-8">My Projects</h1>
+        <div className="container mx-auto px-4 py-8 ">
           {projects.map((project, index) => (
             <Project
               key={project.number}
@@ -258,6 +261,7 @@ export default function Home() {
               description={project.description}
               link={project.link}
               image={project.image}
+              status={project.live}
             />
           ))}
         </div>

@@ -71,7 +71,7 @@ const Form = (props: Props) => {
     }
   };
   return (
-    <div className="md:grid md:grid-cols-2 md:mt-14 mt-10 relative">
+    <div className="md:grid md:grid-cols-2 md:mt-14 mt-10 relative" id="contact">
       {loading && (
         <div className="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center z-10">
           <div className="loader"></div>

@@ -16,7 +16,7 @@ import { DiPostgresql } from "react-icons/di";
 import { SiNextdotjs } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiSocketdotio, SiRedux, SiWebrtc } from "react-icons/si";
-import { FaEthereum, FaSchool, FaBriefcase ,FaGitAlt } from "react-icons/fa";
+import { FaEthereum, FaSchool, FaBriefcase, FaGitAlt } from "react-icons/fa";
 import AboutMe from "../public/images/AboutMe.png";
 import { useState } from "react";
 import Form from "@/components/Form";
@@ -24,11 +24,7 @@ import Project from "@/components/Project";
 
 export default function Home() {
   const socialLinks = [
-    {
-      name: "Facebook",
-      icon: FaFacebookSquare,
-      url: "https://facebook.com/yourFacebookHandle",
-    },
+
     {
       name: "LinkedIn",
       icon: FaLinkedinIn,
@@ -37,12 +33,12 @@ export default function Home() {
     {
       name: "Twitter",
       icon: FaXTwitter,
-      url: "https://twitter.com/yourTwitterHandle",
+      url: "https://x.com/AashutoshGando3",
     },
     {
       name: "Discord",
       icon: FaDiscord,
-      url: "https://discordapp.com/users/yourDiscordHandle",
+      url: "https://discord.com/channels/@me",
     },
   ];
   const skillsName = [
@@ -54,7 +50,7 @@ export default function Home() {
     { icon: IoLogoFirebase, name: "Firebase" },
     { icon: SiSocketdotio, name: "Socket.io" },
     { icon: SiRedux, name: "Redux" },
-    { icon: FaGitAlt , name: "Git" },
+    { icon: FaGitAlt, name: "Git" },
     { icon: SiWebrtc, name: "WebRTC" },
   ];
 
@@ -97,7 +93,7 @@ export default function Home() {
         "Seeking a more diverse approach to healthcare? My app All Cures offers.Articles on a wide range of healing systems Direct doctor consultations via video & chat Community article submission Secure payment integration (CCAvenue) Leveraging WebRTC, WebSockets, & Redux for a seamless experience",
       link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
       image: "/images/AllCures.jpg",
-      live:true
+      live: true,
     },
     {
       number: "02",
@@ -106,7 +102,7 @@ export default function Home() {
         "I have just wrapped up the development of GenZ Express a React Native e-commerce app tailored for the younger generation of shoppers. This project includes an intuitive product browsing and search function, secure payment integration, wishlist functionality, and smooth animations to enhance user experience. The backend, built with Mongoose and MongoDB, ensures reliable inventory and product data management, while Express.js handles secure user authentication and order processing. Optimized API calls guarantee a responsive app experience, and the entire system is designed with scalability in mind, leveraging JavaScript, Redux, and Firebase to deliver a seamless shopping experience.",
       link: "https://github.com/Aashu-crypto/ecommerce",
       image: "/images/ecommerce.jpg",
-      live:false
+      live: false,
     },
   ];
 
@@ -190,7 +186,9 @@ export default function Home() {
                     {Exp.role} at {Exp.company}
                   </div>
                 </div>
-                <div className=" md:justify-end flex justify-center">{Exp.duration}</div>
+                <div className=" md:justify-end flex justify-center">
+                  {Exp.duration}
+                </div>
               </div>
               <p className="mb-2 text-slate-100">{Exp.details}</p>
             </div>

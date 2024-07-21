@@ -151,7 +151,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center flex-col ">
+      <div className="flex justify-center items-center flex-col " id="skills">
         <div className=" text-3xl my-3 flex-row flex">
           My<div className="font-sans ml-2 font-semibold"> {"  "}Skills</div>
         </div>
@@ -208,7 +208,7 @@ export default function Home() {
             height={300}
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           <div className=" text-3xl my-3 flex-row flex text-black  justify-center">
             About <div className="font-sans ml-2 font-semibold"> {"  "}Me</div>
           </div>
@@ -248,7 +248,7 @@ export default function Home() {
           My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
         </div> */}
       </div>
-      <div className=" bg-black ">
+      <div className=" bg-black " id="projects">
         <div className=" text-3xl my-3 flex-row flex text-white  justify-center mt-10">
           My<div className="font-sans ml-2 font-semibold"> {"  "}Projects</div>
         </div>

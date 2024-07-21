@@ -21,6 +21,7 @@ import AboutMe from "../public/images/AboutMe.png";
 import { useState } from "react";
 import Form from "@/components/Form";
 import Project from "@/components/Project";
+import MyGitHub from "@/components/MyGitHub";
 
 export default function Home() {
   const socialLinks = [
@@ -195,6 +196,8 @@ export default function Home() {
           );
         })}
       </div>
+
+      <MyGitHub/>
 
       <div className="mt-10 md:grid md:grid-cols-2  p-10 md:p-14">
         <div>

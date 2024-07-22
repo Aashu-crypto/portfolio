@@ -41,7 +41,7 @@ const MyGitHub = () => {
         <ul className="max-h-80 overflow-y-scroll space-y-2 ">
           {repos.length > 0 ? (
             repos.map((repo) => (
-              <div>
+              <div key={repo.id}>
                 <li
                   key={repo.id}
                   className="p-2 bg-white flex justify-between  "

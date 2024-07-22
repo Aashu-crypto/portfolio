@@ -6,12 +6,18 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const MyGitHub = () => {
   const [repos, setRepos] = useState<any[]>([]);
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: any) => {
     const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    const options:any = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    };
     return date.toLocaleDateString(undefined, options);
   };
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -56,7 +62,9 @@ const MyGitHub = () => {
                   </a>
                   <FaExternalLinkAlt />
                 </li>
-                <h1 className=" text-xs items-center px-2">Last Update at: {formatDate(repo.updated_at)}</h1>
+                <h1 className=" text-xs items-center px-2">
+                  Last Update at: {formatDate(repo.updated_at)}
+                </h1>
               </div>
             ))
           ) : (

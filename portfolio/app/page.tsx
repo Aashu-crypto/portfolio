@@ -22,10 +22,10 @@ import { useState } from "react";
 import Form from "@/components/Form";
 import Project from "@/components/Project";
 import MyGitHub from "@/components/MyGitHub";
+import LeetCode from "@/components/LeetCode";
 
 export default function Home() {
   const socialLinks = [
-
     {
       name: "LinkedIn",
       icon: FaLinkedinIn,
@@ -197,7 +197,8 @@ export default function Home() {
         })}
       </div>
 
-      <MyGitHub/>
+      <MyGitHub />
+      <LeetCode />
 
       <div className="mt-10 md:grid md:grid-cols-2  p-10 md:p-14">
         <div>

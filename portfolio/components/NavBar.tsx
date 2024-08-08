@@ -8,7 +8,7 @@ function NavBar({}: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-gray-400 dark:border-gray-600">
+    <nav className="bg-white border-gray-400 dark:border-gray-600  ">
       <div className="flex justify-between items-center p-4 px-12">
         <a href="/" className="flex gap-2">
           <FaHatCowboy size={"25"} />
@@ -17,7 +17,7 @@ function NavBar({}: Props) {
 
         <div
           className={` ${open ? "block" : "hidden"} md:flex`}
-          id="navbar-sticky"
+        
         >
           <ul className="flex flex-col md:flex-row md:gap-8 absolute top-16 right-5 md:static">
             <li className={`${open?"border rounded-md text-center m-1 bg-slate-200":""}`}>

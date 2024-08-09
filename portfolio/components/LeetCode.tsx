@@ -12,7 +12,7 @@ interface LeetCodeStats {
 const LeetCode = () => {
   const [leetCode, setLeetCode] = useState<LeetCodeStats | null>(null);
   const [loaded, setLoaded] = useState(false);
-  
+
   useEffect(() => {
     const fetchdata = async () => {
       try {
@@ -31,7 +31,7 @@ const LeetCode = () => {
 
     fetchdata();
   }, []);
-  
+
   const Loader = () => {
     return (
       <div role="status" className="flex justify-center items-center h-screen">
@@ -59,19 +59,32 @@ const LeetCode = () => {
   return (
     <>
       {loaded ? (
-        <div className="container mx-auto p-4 bg-black text-white shadow-lg">
+        <div className="  bg-black text-white shadow-lg p-4">
           <div className="text-3xl my-3 flex justify-center items-center">
             <span className="font-sans font-semibold">LeetCode Stats</span>
             <TbBrandLeetcode className="ml-2 text-yellow-500" size={40} />
           </div>
-          <div className="border-gray-300 border-4 rounded-md p-4 space-y-4">
+          <div className="border-gray-300 border-4 rounded-md p-4 space-y-4 ">
             <div className="text-center text-2xl">
-              Username: <span className="font-semibold text-yellow-500">Cynic14</span>
+              Username:{" "}
+              <span className="font-semibold text-yellow-500">Cynic14</span>
             </div>
-            <div className="text-lg">Easy Problems Solved: <span className="font-semibold">{leetCode?.easySolved}</span></div>
-            <div className="text-lg">Medium Problems Solved: <span className="font-semibold">{leetCode?.mediumSolved}</span></div>
-            <div className="text-lg">Hard Problems Solved: <span className="font-semibold">{leetCode?.hardSolved}</span></div>
-            <div className="text-lg">Total Problems Solved: <span className="font-semibold">{leetCode?.totalSolved}</span></div>
+            <div className="text-lg">
+              Easy Problems Solved:{" "}
+              <span className="font-semibold">{leetCode?.easySolved}</span>
+            </div>
+            <div className="text-lg">
+              Medium Problems Solved:{" "}
+              <span className="font-semibold">{leetCode?.mediumSolved}</span>
+            </div>
+            <div className="text-lg">
+              Hard Problems Solved:{" "}
+              <span className="font-semibold">{leetCode?.hardSolved}</span>
+            </div>
+            <div className="text-lg">
+              Total Problems Solved:{" "}
+              <span className="font-semibold">{leetCode?.totalSolved}</span>
+            </div>
           </div>
         </div>
       ) : (

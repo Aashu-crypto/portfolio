@@ -15,7 +15,8 @@ const Form = (props: Props) => {
     website: "",
     message: "",
   });
-  const [loading,setLoading]= useState(false)
+  const [loading, setLoading] = useState(false);
+
   const validate = () => {
     const newErrors = { name: "", email: "", website: "", message: "" };
     let isValid = true;
@@ -36,13 +37,14 @@ const Form = (props: Props) => {
     setErrors(newErrors);
     return isValid;
   };
+
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     if (!validate()) {
-        return;
-      }
+      return;
+    }
     setStatus("Sending...");
-    setLoading(true)
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("name", name);
@@ -59,17 +61,18 @@ const Form = (props: Props) => {
     });
 
     if (res.ok) {
-      setStatus("Email sent successfully");
+      setStatus("Your message has been sent successfully.");
       setName("");
       setEmail("");
       setWebsite("");
       setMessage("");
-      setLoading(false)
-      alert("I will reach back to you")
+      setLoading(false);
+      alert("Thank you! I'll get back to you shortly.");
     } else {
-      setStatus("Error sending email");
+      setStatus("There was an error sending your message. Please try again later.");
     }
   };
+
   return (
     <div className="md:grid md:grid-cols-2 md:mt-14 mt-10 relative" id="contact">
       {loading && (
@@ -93,7 +96,7 @@ const Form = (props: Props) => {
           {errors.name && <div className="text-red-500">{errors.name}</div>}
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Your email"
             className="border w-full rounded-md p-2"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -101,14 +104,14 @@ const Form = (props: Props) => {
           {errors.email && <div className="text-red-500">{errors.email}</div>}
           <input
             type="text"
-            placeholder="Your website (If exists)"
+            placeholder="Your website (optional)"
             className="w-full p-2 border border-gray-300 rounded-md"
             onChange={(e) => setWebsite(e.target.value)}
             value={website}
           />
-         
+
           <textarea
-            placeholder="How can I help?"
+            placeholder="How can I assist you?"
             className="w-full p-2 border border-gray-300 rounded-md h-32"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
@@ -119,7 +122,7 @@ const Form = (props: Props) => {
             className="w-full p-2 bg-black text-white rounded-md"
             onClick={handleSubmit}
           >
-            Get In Touch
+            Send Message
           </button>
         </form>
         {status && <div className="mt-4 text-center">{status}</div>}
@@ -127,23 +130,22 @@ const Form = (props: Props) => {
       <div className="p-10 flex flex-col justify-center">
         <div>
           <h1 className="font-bold text-3xl md:text-4xl flex flex-row">
-            Let&apos;s <span className="mx-2 font-outline">talk</span>for
+            Let&apos;s <span className="mx-2 font-outline">talk</span> about
           </h1>
           <h1 className="font-bold text-3xl md:text-4xl flex flex-row">
-            Something Special
+            Your Next Project
           </h1>
         </div>
 
         <p className="font-normal text-slate-700 my-5">
-          Send mail if you want to recruit or Have a project that needs my expertise. I will be happy to work with you.
+          If you are looking to collaborate, discuss a new project, or simply want to reach out, please feel free to send me a message. I look forward to connecting with you.
         </p>
         <div className="font-bold text-2xl">
-          Mail me: ashugandotra14@gmail.com
+          Email me: ashugandotra14@gmail.com
         </div>
       </div>
     </div>
   );
 };
-    
- 
+
 export default Form;

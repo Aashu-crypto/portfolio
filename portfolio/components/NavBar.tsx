@@ -1,61 +1,84 @@
 "use client";
-import React, { useState } from "react";
-import { FaDownload, FaHatCowboy } from "react-icons/fa";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { FaDownload } from "react-icons/fa";
 import { Link } from "react-scroll";
-type Props = {};
 
-function NavBar({}: Props) {
+function NavBar() {
   const [open, setOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  // useEffect hook to track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once
 
   return (
-    <nav className="bg-white border-gray-400 dark:border-gray-600  ">
+    <nav
+      className={`sticky top-0 z-20 shadow-lg bg-white transition-opacity duration-300 ${
+        scrollY > 0 ? "opacity-70" : "opacity-100"
+      }`}
+    >
       <div className="flex justify-between items-center p-4 px-12">
-        <a href="/" className="flex gap-2">
-          <FaHatCowboy size={"25"} />
-          <span>Portfolio</span>
+        <a href="/" className="flex gap-2 items-center">
+          <Image
+            src={"/images/me.jpg"}
+            width={35}
+            height={35}
+            className="rounded-2xl"
+            alt="Admin Photo"
+          />
+          <span className="font-semibold text-xl">Portfolio</span>
         </a>
 
-        <div
-          className={` ${open ? "block" : "hidden"} md:flex`}
-        
-        >
+        <div className={`${open ? "block" : "hidden"} md:flex`}>
           <ul className="flex flex-col md:flex-row md:gap-8 absolute top-16 right-5 md:static">
-            <li className={`${open?"border rounded-md text-center m-1 bg-slate-200":""}`}>
+            <li className={`${open ? "border rounded-md text-center m-1 bg-slate-200" : ""}`}>
               <Link
                 to="about"
                 spy={true}
                 smooth={true}
-                className="cursor-pointer text-base font-medium"
+                className="cursor-pointer text-base font-medium hover:font-bold"
               >
                 About Me
               </Link>
             </li>
-            <li className={`${open?"border rounded-md text-center m-1 bg-slate-200":""}`}>
+            <li className={`${open ? "border rounded-md text-center m-1 bg-slate-200" : ""}`}>
               <Link
                 to="skills"
                 spy={true}
                 smooth={true}
-                className="cursor-pointer text-base font-medium"
+                className="cursor-pointer text-base font-medium hover:font-bold"
               >
                 Skills
               </Link>
             </li>
-            <li className={`${open?"border rounded-md text-center m-1 bg-slate-200":""}`}>
+            <li className={`${open ? "border rounded-md text-center m-1 bg-slate-200" : ""}`}>
               <Link
                 to="projects"
                 spy={true}
                 smooth={true}
-                className="cursor-pointer text-base font-medium"
+                className="cursor-pointer text-base font-medium hover:font-bold"
               >
                 Projects
               </Link>
             </li>
-            <li className={`${open?"border rounded-md text-center m-1 bg-slate-200":""}`}>
+            <li className={`${open ? "border rounded-md text-center m-1 bg-slate-200" : ""}`}>
               <Link
                 to="contact"
                 spy={true}
                 smooth={true}
-                className="cursor-pointer text-base font-medium"
+                className="cursor-pointer text-base font-medium hover:font-bold"
               >
                 Contact Me
               </Link>

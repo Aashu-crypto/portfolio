@@ -1,6 +1,14 @@
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaGitAlt } from "react-icons/fa";
-const Project = ({ index, number, title, description, link, image,status }: any) => {
+const Project = ({
+  index,
+  number,
+  title,
+  description,
+  link,
+  image,
+  status,
+}: any) => {
   const isEven = index % 2 === 0;
 
   return (
@@ -26,10 +34,12 @@ const Project = ({ index, number, title, description, link, image,status }: any)
           href={link}
           className="mt-4 inline-block text-blue-500 hover:underline"
         >
-            {status?<IoLogoGooglePlaystore size={"35"} />: <FaGitAlt size={"35"} /> }
-         
+          {status ? (
+            <IoLogoGooglePlaystore size={"35"} />
+          ) : (
+            <FaGitAlt size={"35"} />
+          )}
         </a>
-       
       </div>
     </div>
   );

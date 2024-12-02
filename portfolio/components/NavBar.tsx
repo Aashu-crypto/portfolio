@@ -89,7 +89,7 @@ function NavBar() {
         <div className="rounded-md w-auto flex">
           <button className="text-white flex items-center justify-center p-2 text-base hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-black mr-2">
             <a
-              href="https://drive.google.com/file/d/1JZHTGnMn5ryLlS6glTrI9Yt3JlUuyVuo/view?usp=sharing"
+              href="https://drive.google.com/file/d/1_Ob1WYHv1WXPJTTk1O8-Ahxc_QMfm3uO/view?usp=share_link"
               className="flex"
             >
               Resume

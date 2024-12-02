@@ -57,13 +57,13 @@ export default function Home() {
 
   const experiences = [
     {
-      company: "Etherium Technologies",
-      role: "React Native Developer | IOS Developer | Android Developer",
+      company: "Ethereum Technologies",
+      role: "React Native Developer",
       duration: "July 2023 - Present",
       location: "Jammu, India",
       icon: <FaEthereum />,
       details:
-        "If you're seeking a diverse approach to healthcare, All Cures is your go-to app. It features a wide range of articles on various healing systems, direct doctor consultations via video and chat, and community article submissions. Secure payments are handled through CCAvenue, ensuring safe transactions. The app leverages WebRTC, WebSockets, and Redux to provide a seamless, real-time experience, making it a comprehensive health companion that blends traditional and modern medical practices. ",
+        "Developed 'All Cures,' a healthcare app leveraging WebRTC and WebSockets for real-time communication, boosting performance by 20%. Also created 'Saathi,' an elderly care platform with a React admin dashboard, website, and mobile app, integrating secure payments and user authentication. Built a backend for driver registration and car leasing using Node.js, Express, Prisma, and PostgreSQL, implementing effective slot management. Utilized Firebase Authentication, Amazon S3, Redis caching, and Docker for performance optimization and deployment.",
     },
     {
       company: "Ministry of Education, Government of India",
@@ -72,7 +72,7 @@ export default function Home() {
       location: "Jammu, India",
       icon: <FaSchool />,
       details:
-        "I designed and implemented a comprehensive C++ curriculum tailored for 11th and 12th-grade students, which seamlessly integrated theoretical concepts with practical programming exercises. Through personalized guidance and support, I focused on enhancing students' coding skills, problem-solving abilities, and critical thinking. As a leader of student projects, I fostered an environment that encouraged creativity, technical expertise, and collaborative work, significantly contributing to improved student performance in C++ programming.",
+        "Contributed to the UI/UX design of the JK Attendance SED app, gaining hands-on experience with React Native. Designed a Python curriculum for high school students to enhance their technical skills, creativity, and problem-solving abilities. Fostered an environment encouraging technical innovation and collaboration through project-based learning.",
     },
     {
       company: "Pie Infocomm Pvt. Ltd",
@@ -80,9 +80,8 @@ export default function Home() {
       duration: "March 2022 - July 2022",
       location: "Lucknow, Uttar Pradesh, India",
       icon: <FaBriefcase />,
-      details: [
-        "Developed and optimized websites and web applications to improve user experience and functionality.",
-      ],
+      details:
+        "Developed and optimized responsive websites and web applications, enhancing user experience and functionality through efficient coding practices and UI improvements.",
     },
   ];
 
@@ -91,7 +90,7 @@ export default function Home() {
       number: "01",
       title: "All Cures",
       description:
-        "Seeking a more diverse approach to healthcare? My app All Cures offers.Articles on a wide range of healing systems Direct doctor consultations via video & chat Community article submission Secure payment integration (CCAvenue) Leveraging WebRTC, WebSockets, & Redux for a seamless experience",
+        "Seeking a more diverse approach to healthcare? My app All Cures offers articles on a wide range of healing systems, direct doctor consultations via video & chat, community article submission, and secure payment integration (CCAvenue). Leveraging WebRTC, WebSockets, and Redux for a seamless experience.",
       link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
       image: "/images/AllCures.jpg",
       live: true,
@@ -100,10 +99,37 @@ export default function Home() {
       number: "02",
       title: "GenZ Express",
       description:
-        "I have just wrapped up the development of GenZ Express a React Native e-commerce app tailored for the younger generation of shoppers. This project includes an intuitive product browsing and search function, secure payment integration, wishlist functionality, and smooth animations to enhance user experience. The backend, built with Mongoose and MongoDB, ensures reliable inventory and product data management, while Express.js handles secure user authentication and order processing. Optimized API calls guarantee a responsive app experience, and the entire system is designed with scalability in mind, leveraging JavaScript, Redux, and Firebase to deliver a seamless shopping experience.",
+        "GenZ Express is a React Native e-commerce app tailored for the younger generation of shoppers. It includes an intuitive product browsing and search function, secure payment integration, wishlist functionality, and smooth animations. The backend, built with Mongoose and MongoDB, ensures reliable inventory management, while Express.js handles secure user authentication and order processing. Optimized API calls guarantee a responsive app experience, leveraging JavaScript, Redux, and Firebase for a seamless shopping experience.",
       link: "https://github.com/Aashu-crypto/ecommerce",
       image: "/images/ecommerce.jpg",
       live: false,
+    },
+    {
+      number: "03",
+      title: "Saathi",
+      description:
+        "An elderly care platform encompassing a React admin dashboard, website, and React Native mobile app. Integrated secure payments and user authentication, enabling reliable access for users. Built RESTful APIs with Firebase Authentication, Amazon S3 for image storage, and Redis for caching, deployed using Docker.",
+      link: "https://play.google.com/store/apps/details?id=com.aashutoshgandotra14.saathi&hl=en",
+      image: "/images/saathi.png",
+      live: true,
+    },
+    {
+      number: "04",
+      title: "JK Attendance SED",
+      description:
+        "Contributed to the UI/UX design of the JK Attendance app, which helps monitor attendance for the Ministry of Education. Gained expertise in React Native during this project.",
+      link: "https://play.google.com/store/apps/details?id=com.attendance.dsek&hl=en_IN",
+      image: "/images",
+      live: true,
+    },
+    {
+      number: "05",
+      title: "Zaptric Driver",
+      description:
+        "Created App for Drive App for driver to see rides and accept Rides",
+      link: "https://github.com/Aashu-crypto/Driver-app",
+      image: "/images/zaptric.png",
+      live: true,
     },
   ];
 
@@ -128,12 +154,14 @@ export default function Home() {
           </div>
 
           <div className="text-xs  my-20 font-normal leading-6 text-slate-600  mt-10">
-            Highly skilled React Native Developer with over 1 year of experience
-            in mobile application development. Proficient in JavaScript, Redux,
-            Firebase, and WebRTC/WebSockets. Passionate about delivering
-            innovative user experiences and high-quality code. Seeking to
-            contribute expertise in a collaborative environment to develop
-            cutting-edge solutions.
+            Highly skilled React Native Developer with over 2 years of
+            experience in full-stack development and a dedicated focus on mobile
+            application development for the past year. Proficient in JavaScript,
+            TypeScript, Redux, Firebase, WebRTC, WebSockets, and Docker.
+            Experienced in building scalable, real-time solutions and delivering
+            intuitive user experiences. Passionate about leveraging modern
+            technologies to develop innovative, high-performance applications in
+            collaborative and dynamic environments.
           </div>
           <div className="flex flex-row justify-around max-w-60 ">
             {socialLinks.map((Item, index) => {
@@ -209,37 +237,40 @@ export default function Home() {
             height={300}
           />
         </div>
-        <div className="flex flex-col ">
-          <div className=" text-3xl my-3 flex-row flex text-black  justify-center">
-            About <div className="font-sans ml-2 font-semibold"> {"  "}Me</div>
+        <div className="flex flex-col">
+          <div className="text-3xl my-3 flex flex-row text-black justify-center">
+            About <div className="font-sans ml-2 font-semibold">Me</div>
           </div>
-          <div className=" h-4/5 flex flex-col justify-around text-xs my-8 leading-6 font-normal space-y-2">
+          <div className="h-4/5 flex flex-col justify-around text-sm my-8 leading-7 font-normal space-y-4">
             <p>
-              I&apos;m a React Native developer with 2+ years of work
-              experience, including a dedicated focus on React Native
-              development for the past year. My passion lies in building
-              intuitive and engaging mobile experiences. I&apos;m well-versed in
+              I&apos;m a highly skilled React Native developer with over 2 years
+              of professional experience, including a dedicated focus on React
+              Native development for the past year. My expertise lies in
+              creating intuitive and engaging mobile experiences, leveraging
               core React Native concepts, state management with Redux, and
-              integrating complex features like WebRTC and WebSockets for
-              real-time communication capabilities. My proficiency in JavaScript
-              allows me to write clean, maintainable, and performant code.
+              implementing real-time communication features using WebRTC and
+              WebSockets. With a strong foundation in JavaScript and TypeScript,
+              I excel in writing clean, maintainable, and high-performance code.
             </p>
             <p>
-              My portfolio showcases my abilities, with projects like
-              &quot;AllCures&quot; (available on both Android and iOS)
-              demonstrating my expertise in developing cross-platform healthcare
-              solutions. Additionally, my full-stack experience building an
-              e-commerce application using Node.js, Express, and MongoDB
-              highlights my adaptability and end-to-end development skills.
+              My portfolio highlights my ability to deliver impactful projects,
+              including &quot;AllCures&quot;—a cross-platform healthcare app
+              available on both Android and iOS. This app showcases my skills in
+              developing complex solutions with secure payment integrations and
+              real-time communication. Additionally, my experience in building a
+              full-stack e-commerce platform using Node.js, Express, and MongoDB
+              demonstrates my versatility and expertise in backend and frontend
+              development.
             </p>
             <p>
-              Beyond my technical abilities, I possess strong problem-solving
-              skills, attention to detail, and the ability to translate complex
-              requirements into user-friendly interfaces. I&apos;m a
-              collaborative team player, always eager to learn and share
-              knowledge within a dynamic development environment. If you&apos;re
-              seeking a results-oriented React Native developer passionate about
-              creating impactful mobile applications, let&apos;s connect!
+              I pride myself on being a detail-oriented problem solver with the
+              ability to translate complex requirements into user-friendly
+              interfaces. As a collaborative team player, I value continuous
+              learning and knowledge sharing within dynamic development
+              environments. If you&apos;re looking for a results-driven React
+              Native developer passionate about crafting innovative mobile
+              applications, let&apos;s connect and build something
+              extraordinary!
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formspree/react": "^2.5.1",
+ 
     "@tabler/icons-react": "^3.33.0",
     "@types/react-scroll": "^1.8.10",
     "framer-motion": "^12.15.0",

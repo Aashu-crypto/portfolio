@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import {
   Terminal,
@@ -21,39 +21,42 @@ const TerminalHero = () => {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
-  const commands = [
-    {
-      input: "whoami",
-      output: "aashutosh-gandotra: Full-Stack Mobile Developer",
-    },
-    {
-      input: "cat skills.txt",
-      output: `React Native ████████████████████ 95%
+  const commands = useMemo(
+    () => [
+      {
+        input: "whoami",
+        output: "aashutosh-gandotra: Full-Stack Mobile Developer",
+      },
+      {
+        input: "cat skills.txt",
+        output: `React Native ████████████████████ 95%
 TypeScript ████████████████████ 90%
 Node.js    ████████████████████ 90%
 Next.js    ████████████████████ 90%
 AWS        ████████████████████ 80%`,
-    },
-    {
-      input: "ls projects/",
-      output: `all-cures/          zaptric/           saathi/
+      },
+      {
+        input: "ls projects/",
+        output: `all-cures/          zaptric/           saathi/
 ai-matchup/         genz-express/      jk-attendance/`,
-    },
-    {
-      input: "git log --oneline",
-      output: `a1b2c3d feat: implemented real-time video chat with WebRTC
+      },
+      {
+        input: "git log --oneline",
+        output: `a1b2c3d feat: implemented real-time video chat with WebRTC
 e4f5g6h fix: optimized app performance by 200%
 i7j8k9l feat: built scalable ride-booking backend
 m1n2o3p feat: integrated AI-powered matchmaking`,
-    },
-    {
-      input: "npm run deploy",
-      output: `✓ Building production bundle...
+      },
+      {
+        input: "npm run deploy",
+        output: `✓ Building production bundle...
 ✓ Optimizing assets...
 ✓ Deploying to AWS...
 🚀 Deployment successful!`,
-    },
-  ];
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     if (!isTyping) return;
@@ -147,7 +150,7 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
             <div className="p-6 h-80 overflow-hidden">
               <div className="font-mono text-sm leading-relaxed">
                 <div className="text-gray-400 mb-4">
-                  Welcome to Aashutosh's Portfolio Terminal v3.0.0
+                  Welcome to Aashutosh&apos;s Portfolio Terminal v3.0.0
                 </div>
                 <pre className="text-green-400 whitespace-pre-wrap">
                   {displayText}

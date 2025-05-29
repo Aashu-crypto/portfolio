@@ -265,8 +265,8 @@ const ProfessionalSummary = () => {
               Ready to Build Something Amazing?
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Let's discuss how I can help bring your next project to life with
-              cutting-edge technology and proven expertise.
+              Let&apos;s discuss how I can help bring your next project to life
+              with cutting-edge technology and proven expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

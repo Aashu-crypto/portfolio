@@ -1,5 +1,7 @@
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaGitAlt } from "react-icons/fa";
+import Image from "next/image";
+
 const Project = ({
   index,
   number,
@@ -17,10 +19,12 @@ const Project = ({
         isEven ? "md:flex-row-reverse" : ""
       } items-center mb-12 text-white`}
     >
-      <img
+      <Image
         src={image}
         alt={title}
-        className="w-full rounded-lg shadow-md h-96 object-scale-down "
+        width={500}
+        height={384}
+        className="w-full rounded-lg shadow-md h-96 object-scale-down"
       />
       <div
         className={`md:ml-6 ${

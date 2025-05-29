@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Terminal,
@@ -27,14 +27,17 @@ const LeetCode = () => {
   const [terminalText, setTerminalText] = useState("");
   const [showStats, setShowStats] = useState(false);
 
-  const terminalCommands = [
-    "$ leetcode --user Cynic14",
-    "Connecting to LeetCode API...",
-    "Authentication successful ✓",
-    "Fetching problem statistics...",
-    "Loading user profile data...",
-    "Analysis complete! 🚀",
-  ];
+  const terminalCommands = useMemo(
+    () => [
+      "$ leetcode --user Cynic14",
+      "Connecting to LeetCode API...",
+      "Authentication successful ✓",
+      "Fetching problem statistics...",
+      "Loading user profile data...",
+      "Analysis complete! 🚀",
+    ],
+    []
+  );
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -74,7 +77,7 @@ const LeetCode = () => {
     };
 
     fetchdata();
-  }, []);
+  }, [terminalCommands]);
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {

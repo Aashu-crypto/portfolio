@@ -100,15 +100,15 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
   ];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-green-400 flex items-center justify-center p-4 relative overflow-hidden">
+    <section className="min-h-screen b text-green-400 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Matrix-style background */}
       <div className="absolute inset-0 opacity-10">
-        <div
+        {/* <div
           className="absolute inset-0"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300ff00' fill-opacity='0.1'%3E%3Cpath d='M20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
-        ></div>
+        ></div> */}
       </div>
 
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -210,7 +210,7 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               transition={{ delay: 0.8 }}
               className="text-2xl md:text-3xl text-gray-300 mb-6 font-jetbrains"
             >
-              Full-Stack Mobile Developer
+              Full-Stack  Developer
             </motion.div>
 
             <motion.p
@@ -219,9 +219,10 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               transition={{ delay: 1 }}
               className="text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl"
             >
-              Crafting scalable mobile applications and backend systems with{" "}
+              Crafting scalable  applications and backend systems with{" "}
               <span className="text-green-400 font-mono">React Native</span>,{" "}
-              <span className="text-blue-400 font-mono">TypeScript</span>, and{" "}
+              <span className="text-blue-400 font-mono">TypeScript</span>,{" "}
+              <span className="text-blue-400 font-mono">PostgreSQL</span>, and{" "}
               <span className="text-purple-400 font-mono">Node.js</span>.
               Passionate about clean code, performance optimization, and solving
               real-world problems.
@@ -303,8 +304,12 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
             key={i}
             className="absolute text-green-400/20 font-mono text-xs"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerWidth : 1200),
+              y:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerHeight : 800),
               opacity: 0,
             }}
             animate={{

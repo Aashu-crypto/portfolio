@@ -50,7 +50,7 @@ const MyGitHub = () => {
               <div key={repo.id} className="">
                 <li
                   key={repo.id}
-                  className="p-2 bg-white flex justify-between hover:bg-slate-50  "
+                  className="p-2  flex justify-between  "
                 >
                   <a
                     href={repo.html_url}

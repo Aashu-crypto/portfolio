@@ -211,7 +211,7 @@ const LeetCode = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden">
+    <section className="py-20 text-white relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div
@@ -285,7 +285,7 @@ const LeetCode = () => {
               Mastery
             </span>
           </motion.h2>
-          <motion.p
+          {/* <motion.p
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -294,7 +294,7 @@ const LeetCode = () => {
             Algorithmic problem-solving prowess demonstrated through consistent
             practice and optimization challenges. Building logical thinking, one
             problem at a time.
-          </motion.p>
+          </motion.p> */}
         </motion.div>
 
         {/* Terminal or Stats Display */}
@@ -404,7 +404,7 @@ const LeetCode = () => {
               </motion.div>
 
               {/* Skills Showcase */}
-              <motion.div
+              {/* <motion.div
                 className="mt-12 bg-gray-950/90 backdrop-blur-sm rounded-2xl border border-gray-700 p-8"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: showStats ? 1 : 0, y: showStats ? 0 : 30 }}
@@ -453,7 +453,7 @@ const LeetCode = () => {
                     </motion.div>
                   ))}
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           )}
         </AnimatePresence>

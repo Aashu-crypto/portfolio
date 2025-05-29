@@ -38,7 +38,6 @@ import ProfessionalSummary from "@/components/ProfessionalSummary";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
-
 export default function Home() {
   const socialLinks = [
     {
@@ -235,9 +234,9 @@ export default function Home() {
         <TerminalHero />
 
         {/* Professional Summary - NEW */}
-        <div id="about">
+        {/* <div id="about">
           <ProfessionalSummary />
-        </div>
+        </div> */}
 
         {/* Tech Skills Section */}
         <TechSkills />
@@ -299,17 +298,17 @@ export default function Home() {
           id="education"
         >
           {/* Animated Background */}
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <div
               className="absolute inset-0 opacity-10"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               }}
             ></div>
-          </div>
+          </div> */}
 
-          <div className="max-w-6xl mx-auto px-4 relative z-10">
-            <div className="text-5xl md:text-6xl font-bold mb-16 text-center font-jetbrains">
+          <div className="max-w-6xl mx-auto px-2 relative z-10">
+            {/* <div className="text-5xl md:text-6xl font-bold mb-16 text-center font-jetbrains">
               <GraduationCap
                 className="inline-block mr-4 mb-2 text-blue-400"
                 size={60}
@@ -318,7 +317,7 @@ export default function Home() {
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent">
                 Journey
               </span>
-            </div>
+            </div> */}
 
             {/* Timeline Container */}
             <div className="relative">
@@ -370,8 +369,8 @@ export default function Home() {
                   </div>
 
                   {/* Academic Highlights */}
-                  <div className="grid md:grid-cols-2 gap-6 mt-8">
-                    {/* Core Subjects */}
+                  {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
+             
                     <div className="bg-white/5 rounded-xl p-6 border border-blue-400/20">
                       <h4 className="text-xl font-bold text-blue-300 mb-4 flex items-center gap-2">
                         <Code className="w-6 h-6" />
@@ -410,7 +409,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Achievements */}
                     <div className="bg-white/5 rounded-xl p-6 border border-purple-400/20">
                       <h4 className="text-xl font-bold text-purple-300 mb-4 flex items-center gap-2">
                         <Award className="w-6 h-6" />
@@ -460,10 +458,10 @@ export default function Home() {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Skills Developed */}
-                  <div className="mt-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl p-6 border border-blue-400/20">
+                  {/* <div className="mt-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl p-6 border border-blue-400/20">
                     <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                       <Zap className="w-6 h-6 text-yellow-400" />
                       Skills Developed
@@ -493,17 +491,17 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Quote/Reflection */}
-                  <div className="mt-8 text-center">
+                  {/* <div className="mt-8 text-center">
                     <blockquote className="text-lg italic text-blue-200 border-l-4 border-blue-400 pl-6 py-4 bg-blue-900/20 rounded-r-xl">
                       &quot;My engineering journey laid the foundation for
                       logical thinking, problem-solving, and the systematic
                       approach that drives my passion for creating innovative
                       software solutions.&quot;
                     </blockquote>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -511,42 +509,41 @@ export default function Home() {
         </div>
 
         {/* Certifications Section with improved design */}
-       
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-4xl mb-12 text-center font-jetbrains font-bold text-white">
-              My{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-blue-500 to-green-400 bg-clip-text text-transparent ml-2">
-                Certifications
-              </span>
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 backdrop-blur-lg border border-purple-400/30 rounded-xl p-6 shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 bg-purple-400/10 rounded-lg group-hover:bg-purple-400/20 transition-colors duration-300">
-                      <Award className="w-6 h-6 text-purple-400" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-white font-jetbrains">
-                        {cert.title}
-                      </h3>
-                      <p className="text-purple-400 font-medium mb-1">
-                        {cert.issuer}
-                      </p>
-                      <p className="text-gray-400 text-sm flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {cert.date}
-                      </p>
-                    </div>
+
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl mb-12 text-center font-jetbrains font-bold text-white">
+            My{" "}
+            <span className="bg-gradient-to-r from-purple-400 via-blue-500 to-green-400 bg-clip-text text-transparent ml-2">
+              Certifications
+            </span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-lg border border-purple-400/30 rounded-xl p-6 shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-purple-400/10 rounded-lg group-hover:bg-purple-400/20 transition-colors duration-300">
+                    <Award className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-lg mb-2 text-white font-jetbrains">
+                      {cert.title}
+                    </h3>
+                    <p className="text-purple-400 font-medium mb-1">
+                      {cert.issuer}
+                    </p>
+                    <p className="text-gray-400 text-sm flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      {cert.date}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
+        </div>
 
         <MyGitHub />
         <LeetCode />
@@ -555,14 +552,14 @@ export default function Home() {
         <Projects />
 
         {/* Testimonials - NEW */}
-        <div id="testimonials">
+        {/* <div id="testimonials">
           <Testimonials />
-        </div>
+        </div> */}
 
         <Form />
 
         {/* Footer - NEW */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

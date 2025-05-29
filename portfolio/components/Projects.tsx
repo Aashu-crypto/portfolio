@@ -64,7 +64,7 @@ const Projects = () => {
 
   return (
     <div
-      className="bg-gradient-to-br from-black via-gray-900 to-black py-20 relative overflow-hidden"
+      className=" py-20 relative overflow-hidden"
       id="projects"
     >
       {/* Animated Background */}

@@ -65,7 +65,6 @@ import {
   IconBrandApple,
   IconApi,
   IconServer,
-  IconBrandKubernetes,
   IconBrandDocker,
 } from "@tabler/icons-react";
 
@@ -92,22 +91,7 @@ const TechSkills = () => {
       level: 95,
       description: "ES6+, Modern JS, Async/Await",
     },
-    {
-      name: "TypeScript",
-      icon: SiTypescript,
-      color: "#3178C6",
-      category: "frontend",
-      level: 90,
-      description: "Type Safety, Interfaces, Generics",
-    },
-    {
-      name: "React",
-      icon: SiReact,
-      color: "#61DAFB",
-      category: "frontend",
-      level: 95,
-      description: "Hooks, Context, Performance",
-    },
+
     {
       name: "Next.js",
       icon: SiNextdotjs,
@@ -124,30 +108,7 @@ const TechSkills = () => {
       level: 95,
       description: "Cross-platform, Native Modules",
     },
-    {
-      name: "Redux",
-      icon: SiRedux,
-      color: "#764ABC",
-      category: "frontend",
-      level: 85,
-      description: "State Management, RTK Query",
-    },
-    {
-      name: "Tailwind CSS",
-      icon: SiTailwindcss,
-      color: "#06B6D4",
-      category: "frontend",
-      level: 95,
-      description: "Utility-first, Responsive Design",
-    },
-    {
-      name: "Framer Motion",
-      icon: IconBrandFramerMotion,
-      color: "#0055FF",
-      category: "frontend",
-      level: 80,
-      description: "Animations, Gestures, Transitions",
-    },
+
 
     // Backend
     {
@@ -172,39 +133,7 @@ const TechSkills = () => {
       color: "#3776AB",
       category: "backend",
       level: 80,
-      description: "Django, FastAPI, Data Science",
-    },
-    {
-      name: "Prisma",
-      icon: SiPrisma,
-      color: "#2D3748",
-      category: "backend",
-      level: 85,
-      description: "ORM, Type Safety, Migrations",
-    },
-    {
-      name: "GraphQL",
-      icon: SiGraphql,
-      color: "#E10098",
-      category: "backend",
-      level: 75,
-      description: "Apollo, Resolvers, Schema Design",
-    },
-    {
-      name: "WebRTC",
-      icon: SiWebrtc,
-      color: "#333333",
-      category: "backend",
-      level: 80,
-      description: "Real-time Communication, P2P",
-    },
-    {
-      name: "Socket.io",
-      icon: SiSocketdotio,
-      color: "#010101",
-      category: "backend",
-      level: 85,
-      description: "Real-time Events, WebSockets",
+      description: "-",
     },
 
     // Database
@@ -216,22 +145,7 @@ const TechSkills = () => {
       level: 85,
       description: "Advanced Queries, Indexing, JSONB",
     },
-    {
-      name: "MongoDB",
-      icon: SiMongodb,
-      color: "#47A248",
-      category: "database",
-      level: 80,
-      description: "NoSQL, Aggregation, Mongoose",
-    },
-    {
-      name: "Redis",
-      icon: SiRedis,
-      color: "#DC382D",
-      category: "database",
-      level: 75,
-      description: "Caching, Sessions, Pub/Sub",
-    },
+
     {
       name: "Firebase",
       icon: SiFirebase,
@@ -239,14 +153,6 @@ const TechSkills = () => {
       category: "database",
       level: 85,
       description: "Firestore, Auth, Real-time DB",
-    },
-    {
-      name: "Supabase",
-      icon: IconBrandSupabase,
-      color: "#3ECF8E",
-      category: "database",
-      level: 75,
-      description: "PostgreSQL, Auth, Real-time",
     },
 
     // DevOps & Cloud
@@ -258,88 +164,9 @@ const TechSkills = () => {
       level: 85,
       description: "Containerization, Multi-stage",
     },
-    {
-      name: "AWS",
-      icon: SiAmazonaws,
-      color: "#FF9900",
-      category: "devops",
-      level: 80,
-      description: "EC2, S3, Lambda, RDS",
-    },
-    {
-      name: "Vercel",
-      icon: SiVercel,
-      color: "#000000",
-      category: "devops",
-      level: 90,
-      description: "Deployment, Edge Functions",
-    },
-    {
-      name: "Nginx",
-      icon: SiNginx,
-      color: "#009639",
-      category: "devops",
-      level: 70,
-      description: "Reverse Proxy, Load Balancing",
-    },
-    {
-      name: "Linux",
-      icon: SiLinux,
-      color: "#FCC624",
-      category: "devops",
-      level: 80,
-      description: "Ubuntu, Server Management",
-    },
-    {
-      name: "Git",
-      icon: SiGit,
-      color: "#F05032",
-      category: "tools",
-      level: 95,
-      description: "Version Control, Branching",
-    },
 
-    // Tools
-    {
-      name: "VS Code",
-      icon: SiVisualstudio,
-      color: "#007ACC",
-      category: "tools",
-      level: 95,
-      description: "Extensions, Debugging, Snippets",
-    },
-    {
-      name: "GitHub",
-      icon: SiGithub,
-      color: "#181717",
-      category: "tools",
-      level: 95,
-      description: "Actions, Pages, Collaboration",
-    },
-    {
-      name: "Postman",
-      icon: SiPostman,
-      color: "#FF6C37",
-      category: "tools",
-      level: 90,
-      description: "API Testing, Collections",
-    },
-    {
-      name: "Figma",
-      icon: SiFigma,
-      color: "#F24E1E",
-      category: "tools",
-      level: 75,
-      description: "UI/UX Design, Prototyping",
-    },
-    {
-      name: "Jest",
-      icon: SiJest,
-      color: "#C21325",
-      category: "tools",
-      level: 70,
-      description: "Unit Testing, Mocking",
-    },
+   
+
     {
       name: "OpenAI",
       icon: IconBrandOpenai,
@@ -378,17 +205,14 @@ const TechSkills = () => {
   };
 
   return (
-    <section
-      className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden"
-      id="skills"
-    >
+    <section className="py-20  text-white relative overflow-hidden" id="skills">
       {/* Background Effects */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
-      ></div>
+      ></div> */}
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Header */}
@@ -493,7 +317,7 @@ const TechSkills = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -515,7 +339,7 @@ const TechSkills = () => {
               </div>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import { Code, Smartphone, Mail, Phone, MapPin, Zap } from "lucide-react";
 const AboutMe = () => {
   return (
     <div
-      className="py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
+      className="py-20  relative overflow-hidden"
       id="about"
     >
       {/* Animated Background */}
@@ -93,7 +93,7 @@ const AboutMe = () => {
                         <div className="text-xs text-gray-300">Years Exp</div>
                       </div>
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                        <div className="text-2xl font-bold text-white">50+</div>
+                        <div className="text-2xl font-bold text-white">5+</div>
                         <div className="text-xs text-gray-300">Projects</div>
                       </div>
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
@@ -187,7 +187,7 @@ const AboutMe = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <motion.div
                 className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-400/30 rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300"
                 whileHover={{ y: -5 }}
@@ -213,7 +213,7 @@ const AboutMe = () => {
                   Project Success
                 </div>
               </motion.div>
-            </div>
+            </div> */}
 
             {/* Contact Info Cards */}
             <div className="space-y-4">

@@ -7,7 +7,7 @@ import { Code, Smartphone, Mail, Phone, MapPin, Zap } from "lucide-react";
 const AboutMe = () => {
   return (
     <div
-      className="py-20  relative overflow-hidden"
+      className="py-10  relative overflow-hidden"
       id="about"
     >
       {/* Animated Background */}
@@ -98,7 +98,7 @@ const AboutMe = () => {
                       </div>
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
                         <div className="text-2xl font-bold text-white">
-                          100K+
+                          50K+
                         </div>
                         <div className="text-xs text-gray-300">Lines Code</div>
                       </div>
@@ -216,7 +216,7 @@ const AboutMe = () => {
             </div> */}
 
             {/* Contact Info Cards */}
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Mail className="w-6 h-6 text-blue-400" />
                 Let&apos;s Connect
@@ -267,7 +267,7 @@ const AboutMe = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Fun Facts */}
             <motion.div

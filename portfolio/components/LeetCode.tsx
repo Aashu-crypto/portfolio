@@ -211,15 +211,15 @@ const LeetCode = () => {
   };
 
   return (
-    <section className="py-20 text-white relative overflow-hidden">
+    <section className="py-10 text-white relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div
+        {/* <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 0v20h20V0H20zm0 20v20h20V20H20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
-        ></div>
+        ></div> */}
 
         {/* Floating Code Elements */}
         {[...Array(8)].map((_, i) => (
@@ -372,7 +372,7 @@ const LeetCode = () => {
               </motion.div>
 
               {/* Stats Grid */}
-              <motion.div
+              {/* <motion.div
                 className="grid md:grid-cols-3 gap-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: showStats ? 1 : 0 }}
@@ -401,7 +401,7 @@ const LeetCode = () => {
                   difficulty="hard"
                   icon={<Brain className="w-5 h-5 text-white" />}
                 />
-              </motion.div>
+              </motion.div> */}
 
               {/* Skills Showcase */}
               {/* <motion.div

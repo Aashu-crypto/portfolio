@@ -205,7 +205,7 @@ const TechSkills = () => {
   };
 
   return (
-    <section className="py-20  text-white relative overflow-hidden" id="skills">
+    <section className="py-10  text-white relative overflow-hidden" id="skills">
       {/* Background Effects */}
       {/* <div
         className="absolute inset-0 opacity-20"

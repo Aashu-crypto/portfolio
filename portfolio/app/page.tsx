@@ -242,10 +242,10 @@ export default function Home() {
         <TechSkills />
 
         {/* Code Showcase */}
-        <CodeShowcase />
+  
 
         {/* Experience Section with improved design */}
-        <div className="bg-gray-900 text-white py-20" id="experience">
+        <div className=" text-white py-10" id="experience">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-4xl mb-12 text-center font-jetbrains font-bold">
               My <span className="text-green-400 ml-2">Experience</span>
@@ -291,10 +291,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        <CodeShowcase />
         {/* Education Section with improved design */}
         <div
-          className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden"
+          className="py-10  relative overflow-hidden"
           id="education"
         >
           {/* Animated Background */}

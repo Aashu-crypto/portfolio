@@ -27,167 +27,65 @@ const CodeShowcase = () => {
 
   const codeExamples = [
     {
-      title: "React Native with TypeScript",
-      icon: <Smartphone className="w-5 h-5" />,
-      language: "typescript",
-      gradient: "from-cyan-500 to-blue-600",
-      code: `// Real-time chat implementation with WebRTC
-import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { WebRTCView, mediaDevices } from 'react-native-webrtc';
-import { useSocket } from '@/hooks/useSocket';
+      title: "GenAI with LangChain",
+      icon: <Cpu className="w-5 h-5" />,
+      language: "python",
+      gradient: "from-purple-500 to-pink-600",
+      code: `from langchain.llms import OpenAI
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
 
-interface ChatProps {
-  roomId: string;
-  userId: string;
-}
+# Initialize LLM
+llm = OpenAI(temperature=0.7)
 
-const VideoChat: React.FC<ChatProps> = ({ roomId, userId }) => {
-  const [localStream, setLocalStream] = useState<MediaStream | null>(null);
-  const [remoteStream, setRemoteStream] = useState<MediaStream | null>(null);
-  const { socket, isConnected } = useSocket();
+# Create prompt template
+template = """
+You are an expert AI assistant. Help me with the following task:
+{task}
 
-  useEffect(() => {
-    initializeWebRTC();
-  }, []);
+Provide a detailed response with examples.
+"""
 
-  const initializeWebRTC = async () => {
-    try {
-      const stream = await mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-      });
-      setLocalStream(stream);
-    } catch (error) {
-      console.error('Failed to get user media:', error);
-    }
-  };
+prompt = PromptTemplate(
+    input_variables=["task"],
+    template=template
+)
 
-  return (
-    <View style={{ flex: 1 }}>
-      {localStream && (
-        <WebRTCView streamURL={localStream.toURL()} />
-      )}
-    </View>
-  );
-};
+# Create chain
+chain = LLMChain(llm=llm, prompt=prompt)
 
-export default VideoChat;`,
-    },
-    {
-      title: "Node.js Backend with Prisma",
-      icon: <Server className="w-5 h-5" />,
-      language: "javascript",
-      gradient: "from-green-500 to-emerald-600",
-      code: `// Scalable ride-booking API with real-time features
-import express from 'express';
-import { PrismaClient } from '@prisma/client';
-import { Server } from 'socket.io';
-import Redis from 'ioredis';
-
-const app = express();
-const prisma = new PrismaClient();
-const redis = new Redis(process.env.REDIS_URL);
-
-// Real-time ride tracking endpoint
-app.post('/api/rides', async (req, res) => {
-  try {
-    const { customerId, pickup, destination } = req.body;
-    
-    // Create ride in database
-    const ride = await prisma.ride.create({
-      data: {
-        customerId,
-        pickup,
-        destination,
-        status: 'PENDING',
-        createdAt: new Date(),
-      },
-      include: {
-        customer: true,
-      },
-    });
-
-    // Cache ride data for quick access
-    await redis.setex(\`ride:\${ride.id}\`, 3600, JSON.stringify(ride));
-
-    // Notify nearby drivers via WebSocket
-    io.to('drivers').emit('newRide', {
-      rideId: ride.id,
-      pickup: ride.pickup,
-      estimatedFare: calculateFare(pickup, destination),
-    });
-
-    res.json({ success: true, ride });
-  } catch (error) {
-    console.error('Ride creation failed:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-export default app;`,
+# Run chain
+response = chain.run("Explain quantum computing")
+print(response)`,
     },
     {
       title: "Next.js with TypeScript",
       icon: <Globe className="w-5 h-5" />,
       language: "typescript",
-      gradient: "from-purple-500 to-pink-600",
-      code: `// AI-powered matchmaking algorithm
+      gradient: "from-blue-500 to-cyan-600",
+      code: `// AI-powered content generation
 'use client';
-import { useState, useEffect } from 'react';
 import { OpenAI } from 'openai';
-import { QdrantVectorStore } from '@langchain/community/vectorstores/qdrant';
 
-interface UserProfile {
-  id: string;
-  interests: string[];
-  personality: Record<string, number>;
-  preferences: MatchingPreferences;
-}
+const ContentGenerator = () => {
+  const generateContent = async (prompt: string) => {
+    const openai = new OpenAI({
+      apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+    });
 
-const MatchmakingAI = () => {
-  const [matches, setMatches] = useState<UserProfile[]>([]);
-  const [loading, setLoading] = useState(false);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [{ role: "user", content: prompt }],
+      temperature: 0.7,
+    });
 
-  const findMatches = async (userId: string) => {
-    setLoading(true);
-    try {
-      // Get user profile from vector database
-      const userVector = await vectorStore.similaritySearch(userId, 10);
-      
-      // Use OpenAI to analyze compatibility
-      const openai = new OpenAI({
-        apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-      });
-
-      const prompt = \`
-        Analyze user compatibility based on:
-        - Personality traits: \${JSON.stringify(userVector)}
-        - Shared interests and values
-        - Communication style preferences
-        
-        Return top 5 compatible matches with reasons.
-      \`;
-
-      const completion = await openai.chat.completions.create({
-        model: "gpt-4",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.7,
-      });
-
-      const matchResults = JSON.parse(completion.choices[0].message.content);
-      setMatches(matchResults);
-    } catch (error) {
-      console.error('Matching failed:', error);
-    } finally {
-      setLoading(false);
-    }
+    return completion.choices[0].message.content;
   };
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-4">AI Partner Matching</h2>
-      {/* Matching interface */}
+      <h2 className="text-2xl font-bold mb-4">AI Content Generator</h2>
+      {/* Content generation interface */}
     </div>
   );
 };`,
@@ -197,55 +95,26 @@ const MatchmakingAI = () => {
       icon: <Terminal className="w-5 h-5" />,
       language: "dockerfile",
       gradient: "from-orange-500 to-red-600",
-      code: `# Multi-stage Docker build for React Native backend
-FROM node:18-alpine AS builder
+      code: `# Multi-stage Docker build for AI application
+FROM python:3.9-slim AS builder
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
-COPY prisma ./prisma/
-
 # Install dependencies
-RUN npm ci --only=production
-
-# Generate Prisma client
-RUN npx prisma generate
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
-
 # Production stage
-FROM node:18-alpine AS production
+FROM python:3.9-slim
 
 WORKDIR /app
+COPY --from=builder /app /app
 
-# Install dumb-init for proper signal handling
-RUN apk add --no-cache dumb-init
-
-# Create non-root user
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-
-# Copy built application
-COPY --from=builder --chown=nextjs:nodejs /app/dist ./dist
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
-COPY --from=builder --chown=nextjs:nodejs /app/package*.json ./
-
-USER nextjs
-
-EXPOSE 3000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \\
-  CMD curl -f http://localhost:3000/health || exit 1
-
-# Start application with proper signal handling
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "dist/index.js"]`,
+# Run application
+CMD ["python", "app.py"]`,
     },
   ];
 
@@ -305,10 +174,7 @@ CMD ["node", "dist/index.js"]`,
   };
 
   return (
-    <section
-      className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden"
-      id="code"
-    >
+    <section className="py-10  text-white relative overflow-hidden" id="code">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div
@@ -566,7 +432,7 @@ CMD ["node", "dist/index.js"]`,
         </motion.div>
 
         {/* GitHub CTA */}
-        <motion.div
+        {/* <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -588,7 +454,7 @@ CMD ["node", "dist/index.js"]`,
               transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

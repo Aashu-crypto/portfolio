@@ -14,12 +14,14 @@ import {
   Download,
   Coffee,
   Zap,
+  Twitter,
 } from "lucide-react";
 
 const TerminalHero = () => {
   const [currentCommand, setCurrentCommand] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const commands = useMemo(
     () => [
@@ -63,19 +65,29 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
 
     const command = commands[currentCommand];
     const fullText = `$ ${command.input}\n${command.output}`;
+    let animationFrameId: number;
+    let lastUpdateTime = 0;
+    const updateInterval = 50; // 50ms between updates
 
-    if (displayText.length < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(fullText.slice(0, displayText.length + 1));
-      }, 50);
-      return () => clearTimeout(timeout);
-    } else {
-      const timeout = setTimeout(() => {
-        setCurrentCommand((prev) => (prev + 1) % commands.length);
-        setDisplayText("");
-      }, 2000);
-      return () => clearTimeout(timeout);
-    }
+    const animate = (timestamp: number) => {
+      if (timestamp - lastUpdateTime >= updateInterval) {
+        if (displayText.length < fullText.length) {
+          setDisplayText(fullText.slice(0, displayText.length + 1));
+          lastUpdateTime = timestamp;
+        } else {
+          // Wait 2 seconds before moving to next command
+          setTimeout(() => {
+            setCurrentCommand((prev) => (prev + 1) % commands.length);
+            setDisplayText("");
+          }, 2000);
+          return;
+        }
+      }
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [displayText, currentCommand, isTyping, commands]);
 
   const socialLinks = [
@@ -92,12 +104,38 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
       color: "hover:text-blue-400",
     },
     {
-      name: "Email",
-      icon: Mail,
-      url: "mailto:ashugandotra14@gmail.com",
+      name: "X",
+      icon: Twitter,
+      url: "https://x.com/aashutosh3006",
       color: "hover:text-purple-400",
     },
+  
   ];
+
+  // Optimize floating code elements
+  const floatingElements = useMemo(() => {
+    return [...Array(6)].map((_, i) => ({
+      id: i,
+      x:
+        Math.random() *
+        (typeof window !== "undefined" ? window.innerWidth : 1200),
+      y:
+        Math.random() *
+        (typeof window !== "undefined" ? window.innerHeight : 800),
+      symbol: ["{ }", "< />", "( )", "[ ]", "=>", "&&", "||", "==="][
+        Math.floor(Math.random() * 8)
+      ],
+    }));
+  }, []);
+
+  // Set visibility after initial render to prevent hydration issues
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <section className="min-h-screen b text-green-400 flex items-center justify-center p-4 relative overflow-hidden">
@@ -210,7 +248,7 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               transition={{ delay: 0.8 }}
               className="text-2xl md:text-3xl text-gray-300 mb-6 font-jetbrains"
             >
-              Full-Stack  Developer
+              Full-Stack Developer
             </motion.div>
 
             <motion.p
@@ -219,7 +257,7 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               transition={{ delay: 1 }}
               className="text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl"
             >
-              Crafting scalable  applications and backend systems with{" "}
+              Crafting scalable applications and backend systems with{" "}
               <span className="text-green-400 font-mono">React Native</span>,{" "}
               <span className="text-blue-400 font-mono">TypeScript</span>,{" "}
               <span className="text-blue-400 font-mono">PostgreSQL</span>, and{" "}
@@ -299,17 +337,13 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
 
       {/* Floating Code Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(6)].map((_, i) => (
+        {floatingElements.map((element) => (
           <motion.div
-            key={i}
+            key={element.id}
             className="absolute text-green-400/20 font-mono text-xs"
             initial={{
-              x:
-                Math.random() *
-                (typeof window !== "undefined" ? window.innerWidth : 1200),
-              y:
-                Math.random() *
-                (typeof window !== "undefined" ? window.innerHeight : 800),
+              x: element.x,
+              y: element.y,
               opacity: 0,
             }}
             animate={{
@@ -322,11 +356,7 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               delay: Math.random() * 5,
             }}
           >
-            {
-              ["{ }", "< />", "( )", "[ ]", "=>", "&&", "||", "==="][
-                Math.floor(Math.random() * 8)
-              ]
-            }
+            {element.symbol}
           </motion.div>
         ))}
       </div>

@@ -64,7 +64,7 @@ const Projects = () => {
 
   return (
     <div
-      className=" py-20 relative overflow-hidden"
+      className=" py-10 relative overflow-hidden"
       id="projects"
     >
       {/* Animated Background */}
@@ -384,7 +384,7 @@ const Projects = () => {
                   </div>
 
                   {/* Project Stats */}
-                  <div className="grid grid-cols-3 gap-4 pt-4">
+                  {/* <div className="grid grid-cols-3 gap-4 pt-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-green-400 font-mono">
                         {project.live ? "100%" : "80%"}
@@ -403,7 +403,7 @@ const Projects = () => {
                       </div>
                       <div className="text-gray-400 text-sm">Months</div>
                     </div>
-                  </div>
+                  </div> */}
                 </motion.div>
               </div>
 

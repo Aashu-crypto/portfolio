@@ -158,11 +158,11 @@ const Form = (props: Props) => {
         </div>
 
         <p className="font-normal text-gray-300 my-5 leading-relaxed">
-          I'm always excited to connect with innovative companies and teams.
-          Whether you're looking for a skilled developer to join your team, have
-          a project in mind, or want to explore potential collaborations, I'd
-          love to hear from you. Let's discuss how we can create something
-          exceptional together.
+          I&apos;m always excited to connect with innovative companies and
+          teams. Whether you&apos;re looking for a skilled developer to join
+          your team, have a project in mind, or want to explore potential
+          collaborations, I&apos;d love to hear from you. Let&apos;s discuss how
+          we can create something exceptional together.
         </p>
         <div className="font-medium text-xl text-blue-400 flex items-center gap-2">
           <Mail className="w-5 h-5" />

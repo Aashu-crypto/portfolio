@@ -23,8 +23,8 @@ export async function GET() {
         achievements: [
           "Developed and optimized mobile apps for All Cures (healthcare) and Saathi (elderly care) using React Native, Expo, Redux – achieving a 200% boost in app performance.",
           "Implemented real-time chat and video calls via WebRTC, Firebase, and WebSockets, enhancing user engagement.",
-          "Built and deployed Zaptric's customer ride-booking app, enabling real-time ride booking and payments.",
-          "Designed and built Zaptric's Admin Dashboard using React + shadcn UI to manage users, rides, and driver earnings.",
+          "Built and deployed Igris's customer ride-booking app, enabling real-time ride booking and payments.",
+          "Designed and built Igris's Admin Dashboard using React + shadcn UI to manage users, rides, and driver earnings.",
           "Integrated push notifications, geolocation, and secure authentication using Firebase and React Native libraries.",
         ],
       },
@@ -64,7 +64,7 @@ export async function GET() {
         },
       },
       {
-        name: "Zaptric – Driver App, Customer App & Admin Dashboard",
+        name: "Igris – Driver App, Customer App & Admin Dashboard",
         description:
           "Architected and developed a complete ride-booking ecosystem from the ground up with React Native apps, scalable backend, and admin dashboard.",
         technologies: [

@@ -88,7 +88,7 @@ export default function Home() {
       location: "Jammu, India",
       icon: <Building className="w-6 h-6" />,
       details:
-        "Developed and optimized mobile apps for All Cures (healthcare) and Saathi (elderly care) using React Native, Expo, Redux – achieving a 200% boost in app performance. Implemented real-time chat and video calls via WebRTC, Firebase, and WebSockets, enhancing user engagement. Built and deployed Zaptric's customer ride-booking app, enabling real-time ride booking and payments. Designed and built Zaptric's Admin Dashboard using React + shadcn UI to manage users, rides, and driver earnings. Integrated push notifications, geolocation, and secure authentication using Firebase and React Native libraries.",
+        "Developed and optimized mobile apps for All Cures (healthcare) and Saathi (elderly care) using React Native, Expo, Redux – achieving a 200% boost in app performance. Implemented real-time chat and video calls via WebRTC, Firebase, and WebSockets, enhancing user engagement. Built and deployed Igris's customer ride-booking app, enabling real-time ride booking and payments. Designed and built Igris's Admin Dashboard using React + shadcn UI to manage users, rides, and driver earnings. Integrated push notifications, geolocation, and secure authentication using Firebase and React Native libraries.",
     },
     {
       company: "Ministry of Education, Government of India",
@@ -113,11 +113,11 @@ export default function Home() {
     },
     {
       number: "02",
-      title: "Zaptric - Complete Ride Booking Ecosystem",
+      title: "Igris - Complete Ride Booking Ecosystem",
       description:
         "Architected and developed a complete ride-booking ecosystem from the ground up. Built end-to-end platform with React Native apps featuring real-time ride requests, Google Maps integration, geolocation, and secure payments. Developed scalable backend using Node.js, Express, Prisma, PostgreSQL, with WebSockets for real-time communication and Redis for caching. Created feature-rich Admin Dashboard in React + shadcn UI and Dockerized both backend and dashboard for seamless deployment on AWS.",
       link: "https://github.com/Aashu-crypto/Driver-app",
-      image: "/images/zaptric.png",
+      image: "/images/Igris.png",
       live: true,
     },
     {
@@ -239,10 +239,8 @@ export default function Home() {
         </div> */}
 
         {/* Tech Skills Section */}
-        <TechSkills />
 
         {/* Code Showcase */}
-  
 
         {/* Experience Section with improved design */}
         <div className=" text-white py-10" id="experience">
@@ -291,12 +289,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Projects />
         <CodeShowcase />
+        <TechSkills />
         {/* Education Section with improved design */}
-        <div
-          className="py-10  relative overflow-hidden"
-          id="education"
-        >
+        <div className="py-10  relative overflow-hidden" id="education">
           {/* Animated Background */}
           {/* <div className="absolute inset-0">
             <div
@@ -549,7 +546,6 @@ export default function Home() {
         <LeetCode />
 
         <AboutMe />
-        <Projects />
 
         {/* Testimonials - NEW */}
         {/* <div id="testimonials">

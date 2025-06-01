@@ -11,21 +11,39 @@ const Projects = () => {
       title: "All Cures",
       description:
         "Developed a real-time doctor consultation & engagement platform using WebRTC, WebSockets, Redux. Achieved 20% faster performance and 200% improvement in core web vitals. Features include video consultations, chat, community articles, and secure payment integration (CCAvenue).",
-      link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
-      image: "/images/AllCures.jpg",
+      link: "https://apps.apple.com/us/app/all-cures/id1659590351",
+      image: "/images/allcures.png",
       live: true,
     },
     {
       number: "02",
-      title: "Zaptric - Complete Ride Booking Ecosystem",
+      title: "Igris - Customer App",
       description:
-        "Architected and developed a complete ride-booking ecosystem from the ground up. Built end-to-end platform with React Native apps featuring real-time ride requests, Google Maps integration, geolocation, and secure payments. Developed scalable backend using Node.js, Express, Prisma, PostgreSQL, with WebSockets for real-time communication and Redis for caching. Created feature-rich Admin Dashboard in React + shadcn UI and Dockerized both backend and dashboard for seamless deployment on AWS.",
+        "Developed the customer-facing mobile application for the Igris ride-booking platform. Built with React Native, featuring real-time ride tracking, Google Maps integration, secure payment processing, and seamless ride booking experience. Integrated with a scalable backend using WebSockets for real-time updates and Redis for performance optimization.",
       link: "https://github.com/Aashu-crypto/Driver-app",
-      image: "/images/zaptric.png",
+      image: "/images/Igris.png",
       live: true,
     },
     {
       number: "03",
+      title: "Igris Pilot - Driver App",
+      description:
+        "Created the driver application for the Igris platform, enabling drivers to manage rides, track earnings, and navigate efficiently. Built with React Native, featuring real-time ride requests, optimized route navigation, earnings dashboard, and secure payment integration. Implemented advanced features like offline mode and background location tracking.",
+      link: "https://github.com/Aashu-crypto/Driver-app",
+      image: "/images/Igris.png",
+      live: true,
+    },
+    {
+      number: "04",
+      title: "Igris Admin Dashboard",
+      description:
+        "Developed a comprehensive admin dashboard for managing the Igris ride-booking platform. Built with React and shadcn UI, featuring real-time analytics, driver management, ride monitoring, and business operations tools. Implemented secure authentication, role-based access control, and Docker containerization for seamless AWS deployment.",
+      link: "https://github.com/Aashu-crypto/Driver-app",
+      image: "/images/Igris.png",
+      live: true,
+    },
+    {
+      number: "05",
       title: "Saathi (Elderly Care)",
       description:
         "Built the React admin dashboard and React Native mobile application for elderly care platform. Integrated secure payments and user authentication, ensuring a seamless and secure user experience. Features comprehensive care management with real-time monitoring and family connectivity.",
@@ -34,7 +52,7 @@ const Projects = () => {
       live: true,
     },
     {
-      number: "04",
+      number: "06",
       title: "AI Partner Match Up",
       description:
         "AI-powered matchmaking app built with Next.js, powered by OpenAI APIs and Qdrant DB. Captures user context, asks dynamic follow-up questions, and matches based on profile compatibility. Currently in development with advanced AI algorithms for personality matching.",
@@ -43,7 +61,7 @@ const Projects = () => {
       live: false,
     },
     {
-      number: "05",
+      number: "07",
       title: "GenZ Express",
       description:
         "GenZ Express is a React Native e-commerce app tailored for the younger generation. Features intuitive product browsing, secure payment integration, wishlist functionality, and smooth animations. Backend built with Mongoose and MongoDB ensures reliable inventory management.",
@@ -52,7 +70,7 @@ const Projects = () => {
       live: false,
     },
     {
-      number: "06",
+      number: "08",
       title: "JK Attendance SED",
       description:
         "Contributed to the UI/UX design of the JK Attendance app for the Ministry of Education. Helped monitor attendance with React Native, gaining expertise in government-scale application development.",
@@ -63,10 +81,7 @@ const Projects = () => {
   ];
 
   return (
-    <div
-      className=" py-10 relative overflow-hidden"
-      id="projects"
-    >
+    <div className=" py-10 relative overflow-hidden" id="projects">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div
@@ -291,9 +306,8 @@ const Projects = () => {
                             "WebRTC",
                             "Redux",
                             "Firebase",
-                            "Node.js",
                           ],
-                          "Zaptric - Complete Ride Booking Ecosystem": [
+                          "Igris - Complete Ride Booking Ecosystem": [
                             "React Native",
                             "Node.js",
                             "PostgreSQL",
@@ -370,17 +384,6 @@ const Projects = () => {
                         </>
                       )}
                     </motion.a>
-
-                    {project.live && (
-                      <motion.button
-                        className="flex items-center gap-2 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-6 py-3 rounded-xl font-semibold transition-all duration-300"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Play className="w-5 h-5" />
-                        Demo
-                      </motion.button>
-                    )}
                   </div>
 
                   {/* Project Stats */}

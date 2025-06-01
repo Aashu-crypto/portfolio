@@ -39,7 +39,7 @@ AWS        ████████████████████ 80%`,
       },
       {
         input: "ls projects/",
-        output: `all-cures/          zaptric/           saathi/
+        output: `all-cures/          Igris/           saathi/
 ai-matchup/         genz-express/      jk-attendance/`,
       },
       {
@@ -109,7 +109,6 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
       url: "https://x.com/aashutosh3006",
       color: "hover:text-purple-400",
     },
-  
   ];
 
   // Optimize floating code elements

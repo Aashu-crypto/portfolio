@@ -11,7 +11,7 @@ A modern, responsive portfolio website showcasing my experience as a Full-Stack 
 - **Experience**: Detailed work history with achievements
 - **Education**: Academic background
 - **Certifications**: Professional certifications from Meta, 100xDev, and Udemy
-- **Projects**: Showcase of key projects including All Cures, Zaptric, and Saathi
+- **Projects**: Showcase of key projects including All Cures, Igris, and Saathi
 - **GitHub Stats**: Dynamic GitHub contribution display
 - **LeetCode Stats**: Coding problem-solving statistics
 - **Contact Form**: Direct communication interface
@@ -37,7 +37,7 @@ A modern, responsive portfolio website showcasing my experience as a Full-Stack 
 ## 📱 Projects Showcased
 
 1. **All Cures** - Healthcare platform with WebRTC video consultations
-2. **Zaptric** - Complete ride-booking ecosystem (Driver app, Customer app, Admin dashboard)
+2. **Igris** - Complete ride-booking ecosystem (Driver app, Customer app, Admin dashboard)
 3. **Saathi** - Elderly care platform with React Native mobile app
 4. **AI Partner Match Up** - AI-powered matchmaking app (In Progress)
 5. **GenZ Express** - E-commerce platform for younger generation

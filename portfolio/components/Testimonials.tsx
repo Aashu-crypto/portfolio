@@ -41,7 +41,7 @@ const Testimonials = () => {
       id: 2,
       name: "Priya Sharma",
       role: "Product Manager",
-      company: "Zaptric Technologies",
+      company: "Igris Technologies",
       username: "@priya_pm",
       image: "/images/testimonial-2.jpg",
       rating: 5,

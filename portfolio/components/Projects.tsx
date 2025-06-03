@@ -57,25 +57,17 @@ const Projects = () => {
       description:
         "AI-powered matchmaking app built with Next.js, powered by OpenAI APIs and Qdrant DB. Captures user context, asks dynamic follow-up questions, and matches based on profile compatibility. Currently in development with advanced AI algorithms for personality matching.",
       link: "#",
-      image: "/images/ai-matchup.png",
+      image: "/images/AiMatchUp.png",
       live: false,
     },
-    {
-      number: "07",
-      title: "GenZ Express",
-      description:
-        "GenZ Express is a React Native e-commerce app tailored for the younger generation. Features intuitive product browsing, secure payment integration, wishlist functionality, and smooth animations. Backend built with Mongoose and MongoDB ensures reliable inventory management.",
-      link: "https://github.com/Aashu-crypto/ecommerce",
-      image: "/images/ecommerce.jpg",
-      live: false,
-    },
+  
     {
       number: "08",
       title: "JK Attendance SED",
       description:
         "Contributed to the UI/UX design of the JK Attendance app for the Ministry of Education. Helped monitor attendance with React Native, gaining expertise in government-scale application development.",
       link: "https://play.google.com/store/apps/details?id=com.attendance.dsek&hl=en_IN",
-      image: "/images/jk-attendance.png",
+      image: "/images/attandance.png",
       live: true,
     },
   ];

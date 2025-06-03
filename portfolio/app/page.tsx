@@ -39,46 +39,8 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      icon: Linkedin,
-      url: "https://www.linkedin.com/in/aashutosh-gandotra/",
-      color: "hover:text-blue-600",
-    },
-    {
-      name: "Twitter",
-      icon: Twitter,
-      url: "https://x.com/AashutoshGando3",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "GitHub",
-      icon: Github,
-      url: "https://github.com/Aashu-crypto",
-      color: "hover:text-gray-700",
-    },
-  ];
+  
 
-  const skillsName = [
-    { icon: Code, name: "JavaScript", color: "text-yellow-500" },
-    { icon: Code, name: "TypeScript", color: "text-blue-600" },
-    { icon: Code, name: "Python", color: "text-green-600" },
-    { icon: Smartphone, name: "React Native", color: "text-cyan-500" },
-    { icon: Code, name: "React", color: "text-blue-500" },
-    { icon: Globe, name: "Next.js", color: "text-gray-800" },
-    { icon: Server, name: "Node.js", color: "text-green-500" },
-    { icon: Database, name: "Prisma", color: "text-indigo-600" },
-    { icon: Database, name: "PostgreSQL", color: "text-blue-700" },
-    { icon: Zap, name: "Firebase", color: "text-orange-500" },
-    { icon: Terminal, name: "WebSockets", color: "text-purple-600" },
-    { icon: Terminal, name: "WebRTC", color: "text-red-500" },
-    { icon: Code, name: "Redux", color: "text-purple-700" },
-    { icon: Palette, name: "Tailwind CSS", color: "text-teal-500" },
-    { icon: Terminal, name: "Docker", color: "text-blue-600" },
-    { icon: Cloud, name: "AWS", color: "text-orange-600" },
-    { icon: GitBranch, name: "Git", color: "text-orange-700" },
-  ];
 
   const experiences = [
     {
@@ -92,7 +54,7 @@ export default function Home() {
     },
     {
       company: "Ministry of Education, Government of India",
-      role: "Computer Science Teacher",
+      role: "Programmer",
       duration: "April 2022 - July 2023",
       location: "Jammu, India",
       icon: <GraduationCap className="w-6 h-6" />,
@@ -101,62 +63,6 @@ export default function Home() {
     },
   ];
 
-  const projects = [
-    {
-      number: "01",
-      title: "All Cures",
-      description:
-        "Developed a real-time doctor consultation & engagement platform using WebRTC, WebSockets, Redux. Achieved 20% faster performance and 200% improvement in core web vitals. Features include video consultations, chat, community articles, and secure payment integration (CCAvenue).",
-      link: "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
-      image: "/images/AllCures.jpg",
-      live: true,
-    },
-    {
-      number: "02",
-      title: "Igris - Complete Ride Booking Ecosystem",
-      description:
-        "Architected and developed a complete ride-booking ecosystem from the ground up. Built end-to-end platform with React Native apps featuring real-time ride requests, Google Maps integration, geolocation, and secure payments. Developed scalable backend using Node.js, Express, Prisma, PostgreSQL, with WebSockets for real-time communication and Redis for caching. Created feature-rich Admin Dashboard in React + shadcn UI and Dockerized both backend and dashboard for seamless deployment on AWS.",
-      link: "https://github.com/Aashu-crypto/Driver-app",
-      image: "/images/Igris.png",
-      live: true,
-    },
-    {
-      number: "03",
-      title: "Saathi (Elderly Care)",
-      description:
-        "Built the React admin dashboard and React Native mobile application for elderly care platform. Integrated secure payments and user authentication, ensuring a seamless and secure user experience. Features comprehensive care management with real-time monitoring and family connectivity.",
-      link: "https://play.google.com/store/apps/details?id=com.aashutoshgandotra14.saathi&hl=en",
-      image: "/images/saathi.png",
-      live: true,
-    },
-    {
-      number: "04",
-      title: "AI Partner Match Up",
-      description:
-        "AI-powered matchmaking app built with Next.js, powered by OpenAI APIs and Qdrant DB. Captures user context, asks dynamic follow-up questions, and matches based on profile compatibility. Currently in development with advanced AI algorithms for personality matching.",
-      link: "#",
-      image: "/images/ai-matchup.png",
-      live: false,
-    },
-    {
-      number: "05",
-      title: "GenZ Express",
-      description:
-        "GenZ Express is a React Native e-commerce app tailored for the younger generation. Features intuitive product browsing, secure payment integration, wishlist functionality, and smooth animations. Backend built with Mongoose and MongoDB ensures reliable inventory management.",
-      link: "https://github.com/Aashu-crypto/ecommerce",
-      image: "/images/ecommerce.jpg",
-      live: false,
-    },
-    {
-      number: "06",
-      title: "JK Attendance SED",
-      description:
-        "Contributed to the UI/UX design of the JK Attendance app for the Ministry of Education. Helped monitor attendance with React Native, gaining expertise in government-scale application development.",
-      link: "https://play.google.com/store/apps/details?id=com.attendance.dsek&hl=en_IN",
-      image: "/images/jk-attendance.png",
-      live: true,
-    },
-  ];
 
   const certifications = [
     {

@@ -21,7 +21,7 @@ const Projects = () => {
       description:
         "Developed the customer-facing mobile application for the Igris ride-booking platform. Built with React Native, featuring real-time ride tracking, Google Maps integration, secure payment processing, and seamless ride booking experience. Integrated with a scalable backend using WebSockets for real-time updates and Redis for performance optimization.",
       link: "https://github.com/Aashu-crypto/Driver-app",
-      image: "/images/Igris.png",
+      image: "/images/customerapp.png",
       live: true,
     },
     {
@@ -30,7 +30,7 @@ const Projects = () => {
       description:
         "Created the driver application for the Igris platform, enabling drivers to manage rides, track earnings, and navigate efficiently. Built with React Native, featuring real-time ride requests, optimized route navigation, earnings dashboard, and secure payment integration. Implemented advanced features like offline mode and background location tracking.",
       link: "https://github.com/Aashu-crypto/Driver-app",
-      image: "/images/Igris.png",
+      image: "/images/driverapp.png",
       live: true,
     },
     {
@@ -39,7 +39,7 @@ const Projects = () => {
       description:
         "Developed a comprehensive admin dashboard for managing the Igris ride-booking platform. Built with React and shadcn UI, featuring real-time analytics, driver management, ride monitoring, and business operations tools. Implemented secure authentication, role-based access control, and Docker containerization for seamless AWS deployment.",
       link: "https://github.com/Aashu-crypto/Driver-app",
-      image: "/images/Igris.png",
+      image: "/images/dashboard.png",
       live: true,
     },
     {

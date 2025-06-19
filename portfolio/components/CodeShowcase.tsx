@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Terminal,
@@ -18,20 +18,21 @@ import {
   Layers,
 } from "lucide-react";
 
-const CodeShowcase = () => {
+const CodeShowcase = React.memo(() => {
   const [activeTab, setActiveTab] = useState(0);
   const [typedCode, setTypedCode] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const codeExamples = [
-    {
-      title: "GenAI with LangChain",
-      icon: <Cpu className="w-5 h-5" />,
-      language: "python",
-      gradient: "from-purple-500 to-pink-600",
-      code: `from langchain.llms import OpenAI
+  const codeExamples = useMemo(
+    () => [
+      {
+        title: "GenAI with LangChain",
+        icon: <Cpu className="w-5 h-5" />,
+        language: "python",
+        gradient: "from-purple-500 to-pink-600",
+        code: `from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
@@ -57,13 +58,13 @@ chain = LLMChain(llm=llm, prompt=prompt)
 # Run chain
 response = chain.run("Explain quantum computing")
 print(response)`,
-    },
-    {
-      title: "Next.js with TypeScript",
-      icon: <Globe className="w-5 h-5" />,
-      language: "typescript",
-      gradient: "from-blue-500 to-cyan-600",
-      code: `// AI-powered content generation
+      },
+      {
+        title: "Next.js with TypeScript",
+        icon: <Globe className="w-5 h-5" />,
+        language: "typescript",
+        gradient: "from-blue-500 to-cyan-600",
+        code: `// AI-powered content generation
 'use client';
 import { OpenAI } from 'openai';
 
@@ -89,13 +90,13 @@ const ContentGenerator = () => {
     </div>
   );
 };`,
-    },
-    {
-      title: "Docker & DevOps",
-      icon: <Terminal className="w-5 h-5" />,
-      language: "dockerfile",
-      gradient: "from-orange-500 to-red-600",
-      code: `# Multi-stage Docker build for AI application
+      },
+      {
+        title: "Docker & DevOps",
+        icon: <Terminal className="w-5 h-5" />,
+        language: "dockerfile",
+        gradient: "from-orange-500 to-red-600",
+        code: `# Multi-stage Docker build for AI application
 FROM python:3.9-slim AS builder
 
 WORKDIR /app
@@ -115,19 +116,27 @@ COPY --from=builder /app /app
 
 # Run application
 CMD ["python", "app.py"]`,
-    },
-  ];
+      },
+    ],
+    []
+  );
 
-  const currentCode = codeExamples[activeTab].code;
+  const currentCode = useMemo(
+    () => codeExamples[activeTab].code,
+    [codeExamples, activeTab]
+  );
 
+  // Optimized typewriter effect with reduced frequency
   useEffect(() => {
     if (!isPlaying) return;
 
     if (currentIndex < currentCode.length) {
       const timeout = setTimeout(() => {
-        setTypedCode(currentCode.slice(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      }, 20);
+        // Batch updates to reduce re-renders
+        const nextIndex = Math.min(currentIndex + 3, currentCode.length); // Type 3 characters at once
+        setTypedCode(currentCode.slice(0, nextIndex));
+        setCurrentIndex(nextIndex);
+      }, 50); // Reduced frequency from 20ms to 50ms
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, currentCode, isPlaying]);
@@ -137,7 +146,7 @@ CMD ["python", "app.py"]`,
     setCurrentIndex(0);
   }, [activeTab]);
 
-  const copyToClipboard = async () => {
+  const copyToClipboard = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(currentCode);
       setCopied(true);
@@ -145,37 +154,61 @@ CMD ["python", "app.py"]`,
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
-  };
+  }, [currentCode]);
 
-  const togglePlayback = () => {
+  const togglePlayback = useCallback(() => {
     setIsPlaying(!isPlaying);
-  };
+  }, [isPlaying]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
+  const containerVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.1,
+        },
       },
-    },
-  };
+    }),
+    []
+  );
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
+  const itemVariants = useMemo(
+    () => ({
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+        },
       },
-    },
-  };
+    }),
+    []
+  );
+
+  const techStack = useMemo(
+    () => [
+      { name: "TypeScript", color: "from-blue-500 to-blue-600" },
+      { name: "React Native", color: "from-cyan-500 to-cyan-600" },
+      { name: "Node.js", color: "from-green-500 to-green-600" },
+      { name: "Prisma", color: "from-indigo-500 to-indigo-600" },
+      { name: "PostgreSQL", color: "from-blue-600 to-blue-700" },
+      { name: "Redis", color: "from-red-500 to-red-600" },
+      { name: "WebRTC", color: "from-purple-500 to-purple-600" },
+      { name: "Socket.io", color: "from-gray-600 to-gray-700" },
+      { name: "Docker", color: "from-blue-500 to-blue-600" },
+      { name: "AWS", color: "from-orange-500 to-orange-600" },
+      { name: "Next.js", color: "from-gray-700 to-gray-800" },
+      { name: "OpenAI", color: "from-purple-600 to-purple-700" },
+    ],
+    []
+  );
 
   return (
-    <section className="py-10  text-white relative overflow-hidden" id="code">
-      {/* Animated Background */}
+    <section className="py-10 text-white relative overflow-hidden" id="code">
+      {/* Simplified Background */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-40"
@@ -183,30 +216,9 @@ CMD ["python", "app.py"]`,
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         ></div>
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+        {/* Simplified background animations with reduced complexity */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-green-500/5 to-blue-500/5 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl opacity-50" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -258,8 +270,8 @@ CMD ["python", "app.py"]`,
                     : "border-gray-600 text-gray-300 hover:border-green-400 hover:text-green-400 bg-gray-800/50"
                 }`}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {example.icon}
                 {example.title}
@@ -280,18 +292,9 @@ CMD ["python", "app.py"]`,
             <div className="flex items-center justify-between px-6 py-4 bg-gray-800/80 backdrop-blur-sm border-b border-gray-700">
               <div className="flex items-center gap-3">
                 <div className="flex gap-2">
-                  <motion.div
-                    className="w-3 h-3 rounded-full bg-red-500"
-                    whileHover={{ scale: 1.2 }}
-                  />
-                  <motion.div
-                    className="w-3 h-3 rounded-full bg-yellow-500"
-                    whileHover={{ scale: 1.2 }}
-                  />
-                  <motion.div
-                    className="w-3 h-3 rounded-full bg-green-500"
-                    whileHover={{ scale: 1.2 }}
-                  />
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
                 </div>
                 <div className="flex items-center gap-2 ml-4">
                   <Terminal className="text-gray-400" size={16} />
@@ -305,11 +308,9 @@ CMD ["python", "app.py"]`,
               </div>
 
               <div className="flex items-center gap-3">
-                <motion.button
+                <button
                   onClick={togglePlayback}
                   className="flex items-center gap-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm text-gray-300 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   {isPlaying ? (
                     <Zap className="w-4 h-4" />
@@ -317,13 +318,11 @@ CMD ["python", "app.py"]`,
                     <Play className="w-4 h-4" />
                   )}
                   {isPlaying ? "Live" : "Paused"}
-                </motion.button>
+                </button>
 
-                <motion.button
+                <button
                   onClick={copyToClipboard}
                   className="flex items-center gap-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm text-gray-300 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <AnimatePresence mode="wait">
                     {copied ? (
@@ -350,7 +349,7 @@ CMD ["python", "app.py"]`,
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </motion.button>
+                </button>
               </div>
             </div>
 
@@ -368,7 +367,7 @@ CMD ["python", "app.py"]`,
                     <motion.span
                       className="bg-green-400 text-black"
                       animate={{ opacity: [1, 0] }}
-                      transition={{ duration: 0.8, repeat: Infinity }}
+                      transition={{ duration: 1, repeat: Infinity }}
                     >
                       █
                     </motion.span>
@@ -403,61 +402,25 @@ CMD ["python", "app.py"]`,
             Technologies Used
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { name: "TypeScript", color: "from-blue-500 to-blue-600" },
-              { name: "React Native", color: "from-cyan-500 to-cyan-600" },
-              { name: "Node.js", color: "from-green-500 to-green-600" },
-              { name: "Prisma", color: "from-indigo-500 to-indigo-600" },
-              { name: "PostgreSQL", color: "from-blue-600 to-blue-700" },
-              { name: "Redis", color: "from-red-500 to-red-600" },
-              { name: "WebRTC", color: "from-purple-500 to-purple-600" },
-              { name: "Socket.io", color: "from-gray-600 to-gray-700" },
-              { name: "Docker", color: "from-blue-500 to-blue-600" },
-              { name: "AWS", color: "from-orange-500 to-orange-600" },
-              { name: "Next.js", color: "from-gray-700 to-gray-800" },
-              { name: "OpenAI", color: "from-purple-600 to-purple-700" },
-            ].map((tech, index) => (
+            {techStack.map((tech, index) => (
               <motion.span
                 key={tech.name}
                 className={`px-4 py-2 bg-gradient-to-r ${tech.color} text-white rounded-full text-sm font-mono font-medium shadow-lg`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.1, y: -2 }}
+                whileHover={{ scale: 1.05, y: -2 }}
               >
                 {tech.name}
               </motion.span>
             ))}
           </div>
         </motion.div>
-
-        {/* GitHub CTA */}
-        {/* <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <motion.a
-            href="https://github.com/Aashu-crypto"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white rounded-xl transition-all duration-300 font-semibold text-lg border border-gray-600 hover:border-green-400 shadow-xl"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <GitBranch className="w-6 h-6 text-green-400" />
-            View Full Code on GitHub
-            <motion.div
-              className="w-2 h-2 bg-green-400 rounded-full"
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </motion.a>
-        </motion.div> */}
       </div>
     </section>
   );
-};
+});
+
+CodeShowcase.displayName = "CodeShowcase";
 
 export default CodeShowcase;

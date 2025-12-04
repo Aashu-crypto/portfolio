@@ -23,8 +23,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
+  metadataBase: new URL("https://aashutoshgandotra.dev"),
+  title: {
+    default:
+      "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
+    template: "%s | Aashutosh Gandotra",
+  },
   description:
     "Full-Stack Mobile Developer with 3+ years experience in React Native, React, Next.js, Node.js, and TypeScript. Specialized in building scalable mobile apps, real-time features, and cloud deployment. Available for hire.",
   keywords: [
@@ -42,34 +46,71 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Frontend Developer",
     "Backend Developer",
+    "Expo Developer",
+    "Redux Developer",
+    "PostgreSQL Developer",
+    "Firebase Developer",
+    "Jammu Developer",
+    "India Developer",
   ],
-  authors: [{ name: "Aashutosh Gandotra" }],
+  authors: [
+    { name: "Aashutosh Gandotra", url: "https://aashutoshgandotra.dev" },
+  ],
   creator: "Aashutosh Gandotra",
+  publisher: "Aashutosh Gandotra",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  category: "technology",
+  alternates: {
+    canonical: "https://aashutoshgandotra.dev",
+  },
   openGraph: {
-    title: "Aashutosh Gandotra - Full-Stack Mobile Developer",
+    title:
+      "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
     description:
       "Full-Stack Mobile Developer specializing in React Native, React, and Node.js. 3+ years experience building scalable applications.",
     url: "https://aashutoshgandotra.dev",
     siteName: "Aashutosh Gandotra Portfolio",
-    type: "website",
+    locale: "en_US",
+    type: "profile",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Aashutosh Gandotra - Full-Stack Mobile Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aashutosh Gandotra - Full-Stack Mobile Developer",
+    title:
+      "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
     description:
-      "Full-Stack Mobile Developer specializing in React Native, React, and Node.js",
+      "Full-Stack Mobile Developer specializing in React Native, React, and Node.js. Building scalable apps with 3+ years of experience.",
     creator: "@AashutoshGando3",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "your-google-verification-code",
+    // Add your actual verification codes when you get them from:
+    // Google Search Console, Bing Webmaster Tools, etc.
   },
 };
 

@@ -39,9 +39,6 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  
-
-
   const experiences = [
     {
       company: "Ethereum Technologies",
@@ -62,7 +59,6 @@ export default function Home() {
         "Contributed to the JK Attendance SED App frontend using React Native. Designed a Python curriculum for high school students to enhance their technical skills, creativity, and problem-solving abilities. Fostered an environment encouraging technical innovation and collaboration through project-based learning.",
     },
   ];
-
 
   const certifications = [
     {
@@ -87,45 +83,192 @@ export default function Home() {
     },
   ];
 
-  // Structured data for SEO
+  // Enhanced Structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Aashutosh Gandotra",
-    jobTitle: "Full-Stack Mobile Developer",
-    description:
-      "Full-Stack Mobile Developer with 3+ years of experience building scalable React Native apps, web apps using React and Next.js, and backend systems using Node.js, Express, PostgreSQL, and Prisma.",
-    url: "https://aashutoshgandotra.dev",
-    sameAs: [
-      "https://www.linkedin.com/in/aashutosh-gandotra/",
-      "https://github.com/Aashu-crypto",
-      "https://x.com/AashutoshGando3",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Jammu",
-      addressCountry: "India",
-    },
-    email: "ashugandotra14@gmail.com",
-    telephone: "+91-8825024304",
-    knowsAbout: [
-      "React Native",
-      "React",
-      "Next.js",
-      "Node.js",
-      "JavaScript",
-      "TypeScript",
-      "PostgreSQL",
-      "Mobile App Development",
-      "Full Stack Development",
-    ],
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Government College of Engineering and Technology",
-    },
-    worksFor: {
-      "@type": "Organization",
-      name: "Ethereum Technologies",
+    "@type": "ProfilePage",
+    mainEntity: {
+      "@type": "Person",
+      "@id": "https://aashutoshgandotra.dev/#person",
+      name: "Aashutosh Gandotra",
+      alternateName: "Aashu Gandotra",
+      jobTitle: "Full-Stack Mobile Developer",
+      description:
+        "Full-Stack Mobile Developer with 3+ years of experience building scalable React Native apps, web apps using React and Next.js, and backend systems using Node.js, Express, PostgreSQL, and Prisma.",
+      url: "https://aashutoshgandotra.dev",
+      image: "https://aashutoshgandotra.dev/profile-image.jpg",
+      sameAs: [
+        "https://www.linkedin.com/in/aashutosh-gandotra/",
+        "https://github.com/Aashu-crypto",
+        "https://x.com/AashutoshGando3",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Jammu",
+        addressRegion: "Jammu and Kashmir",
+        addressCountry: "IN",
+      },
+      email: "ashugandotra14@gmail.com",
+      telephone: "+91-8825024304",
+      knowsAbout: [
+        {
+          "@type": "Thing",
+          name: "React Native",
+          description: "Mobile app development framework",
+        },
+        {
+          "@type": "Thing",
+          name: "React",
+          description: "JavaScript library for building user interfaces",
+        },
+        {
+          "@type": "Thing",
+          name: "Next.js",
+          description: "React framework for production",
+        },
+        {
+          "@type": "Thing",
+          name: "Node.js",
+          description: "JavaScript runtime",
+        },
+        {
+          "@type": "Thing",
+          name: "TypeScript",
+          description: "Typed superset of JavaScript",
+        },
+        {
+          "@type": "Thing",
+          name: "PostgreSQL",
+          description: "Relational database",
+        },
+        {
+          "@type": "Thing",
+          name: "Mobile App Development",
+          description: "Building cross-platform mobile applications",
+        },
+        {
+          "@type": "Thing",
+          name: "Full Stack Development",
+          description: "End-to-end application development",
+        },
+      ],
+      knowsLanguage: ["en-US", "hi-IN"],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Government College of Engineering and Technology",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Jammu",
+          addressCountry: "IN",
+        },
+      },
+      worksFor: {
+        "@type": "Organization",
+        name: "Ethereum Technologies",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Jammu",
+          addressCountry: "IN",
+        },
+      },
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "Full Stack Web Development",
+          credentialCategory: "certificate",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "100xDev",
+          },
+          dateCreated: "2024-04",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "React Native",
+          credentialCategory: "certificate",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Meta",
+          },
+          dateCreated: "2023-08",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "React",
+          credentialCategory: "certificate",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Meta",
+          },
+          dateCreated: "2023-07",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "Data Structures & Algorithms",
+          credentialCategory: "certificate",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Udemy",
+          },
+          dateCreated: "2022-08",
+        },
+      ],
+      hasOccupation: [
+        {
+          "@type": "Occupation",
+          name: "React Native & Full Stack Developer",
+          occupationLocation: {
+            "@type": "Place",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Jammu",
+              addressCountry: "IN",
+            },
+          },
+          estimatedSalary: {
+            "@type": "MonetaryAmount",
+            currency: "INR",
+            value: {
+              "@type": "QuantitativeValue",
+              minValue: 500000,
+              maxValue: 1000000,
+              unitText: "YEAR",
+            },
+          },
+          skills:
+            "React Native, React, Node.js, TypeScript, PostgreSQL, Firebase, WebRTC, Redux, Expo",
+        },
+      ],
+      workExample: [
+        {
+          "@type": "CreativeWork",
+          name: "All Cures Healthcare App",
+          description:
+            "Healthcare mobile application built with React Native and Expo",
+          keywords: "React Native, Healthcare, Mobile App",
+        },
+        {
+          "@type": "CreativeWork",
+          name: "Saathi Elderly Care App",
+          description:
+            "Elderly care mobile application with real-time features",
+          keywords: "React Native, Elderly Care, Firebase",
+        },
+        {
+          "@type": "CreativeWork",
+          name: "Igris Ride-Booking Platform",
+          description:
+            "Customer ride-booking app with real-time tracking and payments",
+          keywords: "React Native, Ride Booking, Real-time",
+        },
+        {
+          "@type": "CreativeWork",
+          name: "Igris Admin Dashboard",
+          description:
+            "Admin dashboard for managing users, rides, and driver earnings",
+          keywords: "React, Admin Dashboard, shadcn UI",
+        },
+      ],
     },
   };
 
@@ -135,7 +278,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="flex flex-col font-sans">
+      <main className="flex flex-col font-sans">
         {/* Terminal Hero Section */}
         <TerminalHero />
 
@@ -149,11 +292,18 @@ export default function Home() {
         {/* Code Showcase */}
 
         {/* Experience Section with improved design */}
-        <div className=" text-white py-10" id="experience">
+        <section
+          className=" text-white py-10"
+          id="experience"
+          aria-labelledby="experience-heading"
+        >
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-4xl mb-12 text-center font-jetbrains font-bold">
+            <h1
+              id="experience-heading"
+              className="text-4xl mb-12 text-center font-jetbrains font-bold"
+            >
               My <span className="text-green-400 ml-2">Experience</span>
-            </h2>
+            </h1>
             <div className="space-y-8">
               {experiences.map((Exp, index) => {
                 return (
@@ -194,12 +344,16 @@ export default function Home() {
               })}
             </div>
           </div>
-        </div>
+        </section>
         <Projects />
         <CodeShowcase />
         <TechSkills />
         {/* Education Section with improved design */}
-        <div className="py-10  relative overflow-hidden" id="education">
+        <section
+          className="py-10  relative overflow-hidden"
+          id="education"
+          aria-labelledby="education-heading"
+        >
           {/* Animated Background */}
           {/* <div className="absolute inset-0">
             <div
@@ -409,44 +563,52 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Certifications Section with improved design */}
-
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl mb-12 text-center font-jetbrains font-bold text-white">
-            My{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-blue-500 to-green-400 bg-clip-text text-transparent ml-2">
-              Certifications
-            </span>
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <div
-                key={index}
-                className="bg-white/5 backdrop-blur-lg border border-purple-400/30 rounded-xl p-6 shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-purple-400/10 rounded-lg group-hover:bg-purple-400/20 transition-colors duration-300">
-                    <Award className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg mb-2 text-white font-jetbrains">
-                      {cert.title}
-                    </h3>
-                    <p className="text-purple-400 font-medium mb-1">
-                      {cert.issuer}
-                    </p>
-                    <p className="text-gray-400 text-sm flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {cert.date}
-                    </p>
+        <section
+          className="py-10"
+          id="certifications"
+          aria-labelledby="certifications-heading"
+        >
+          <div className="max-w-6xl mx-auto px-4">
+            <h1
+              id="certifications-heading"
+              className="text-4xl mb-12 text-center font-jetbrains font-bold text-white"
+            >
+              My{" "}
+              <span className="bg-gradient-to-r from-purple-400 via-blue-500 to-green-400 bg-clip-text text-transparent ml-2">
+                Certifications
+              </span>
+            </h1>
+            <div className="grid md:grid-cols-2 gap-6">
+              {certifications.map((cert, index) => (
+                <div
+                  key={index}
+                  className="bg-white/5 backdrop-blur-lg border border-purple-400/30 rounded-xl p-6 shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 bg-purple-400/10 rounded-lg group-hover:bg-purple-400/20 transition-colors duration-300">
+                      <Award className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-white font-jetbrains">
+                        {cert.title}
+                      </h3>
+                      <p className="text-purple-400 font-medium mb-1">
+                        {cert.issuer}
+                      </p>
+                      <p className="text-gray-400 text-sm flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {cert.date}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
         <MyGitHub />
         <LeetCode />
@@ -462,7 +624,7 @@ export default function Home() {
 
         {/* Footer - NEW */}
         {/* <Footer /> */}
-      </div>
+      </main>
     </>
   );
 }

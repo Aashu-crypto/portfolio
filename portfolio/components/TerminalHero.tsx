@@ -27,27 +27,27 @@ const TerminalHero = () => {
     () => [
       {
         input: "whoami",
-        output: "aashutosh-gandotra: Full-Stack Mobile Developer",
+        output: "aashutosh-gandotra: Lead Full Stack Engineer @ Zaptric Mobility",
       },
       {
         input: "cat skills.txt",
-        output: `React Native ████████████████████ 95%
-TypeScript ████████████████████ 90%
-Node.js    ████████████████████ 90%
-Next.js    ████████████████████ 90%
-AWS        ████████████████████ 80%`,
+        output: `React / React Native ████████████████████ 95%
+TypeScript           ████████████████████ 90%
+Node.js / Prisma     ████████████████████ 90%
+PostgreSQL / Redis   ████████████████████ 85%
+AWS / Docker         ████████████████████ 80%`,
       },
       {
         input: "ls projects/",
-        output: `all-cures/          Igris/           saathi/
-ai-matchup/         genz-express/      jk-attendance/`,
+        output: `zaptric-mobility/   all-cures/        saathi/
+ai-partner-matchup/ jk-attendance/`,
       },
       {
         input: "git log --oneline",
-        output: `a1b2c3d feat: implemented real-time video chat with WebRTC
-e4f5g6h fix: optimized app performance by 200%
-i7j8k9l feat: built scalable ride-booking backend
-m1n2o3p feat: integrated AI-powered matchmaking`,
+        output: `a1b2c3d feat: built production AI agent with Gemini + MCP
+e4f5g6h feat: integrated OCPI for EV charging & CDR billing
+i7j8k9l feat: shipped RBAC fleet-management dashboard
+m1n2o3p feat: implemented real-time video chat with WebRTC`,
       },
       {
         input: "npm run deploy",
@@ -247,7 +247,7 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               transition={{ delay: 0.8 }}
               className="text-2xl md:text-3xl text-gray-300 mb-6 font-jetbrains"
             >
-              Full-Stack Developer
+              Full Stack Engineer
             </motion.div>
 
             <motion.p
@@ -256,13 +256,13 @@ m1n2o3p feat: integrated AI-powered matchmaking`,
               transition={{ delay: 1 }}
               className="text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl"
             >
-              Crafting scalable applications and backend systems with{" "}
+              4+ years building production web &amp; mobile platforms with{" "}
               <span className="text-green-400 font-mono">React Native</span>,{" "}
-              <span className="text-blue-400 font-mono">TypeScript</span>,{" "}
-              <span className="text-blue-400 font-mono">PostgreSQL</span>, and{" "}
+              <span className="text-blue-400 font-mono">TypeScript</span>, and{" "}
               <span className="text-purple-400 font-mono">Node.js</span>.
-              Passionate about clean code, performance optimization, and solving
-              real-world problems.
+              Sole/lead engineer shipping AI agent services, real-time systems,
+              and cloud-native backends across HealthTech, Ride-Hailing, and EV
+              Mobility.
             </motion.p>
           </div>
 

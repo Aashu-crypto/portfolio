@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import {
   Terminal,
   Code2,
@@ -174,13 +174,13 @@ CMD ["python", "app.py"]`,
   );
 
   const itemVariants = useMemo(
-    () => ({
+    (): Variants => ({
       hidden: { y: 20, opacity: 0 },
       visible: {
         y: 0,
         opacity: 1,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           stiffness: 100,
         },
       },

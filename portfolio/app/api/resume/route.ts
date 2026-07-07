@@ -4,7 +4,7 @@ export async function GET() {
   const resumeData = {
     personalInfo: {
       name: "Aashutosh Gandotra",
-      title: "Full-Stack Mobile Developer",
+      title: "Full Stack Engineer",
       location: "Jammu, India",
       phone: "+91-8825024304",
       email: "ashugandotra14@gmail.com",
@@ -13,19 +13,32 @@ export async function GET() {
       linkedin: "https://linkedin.com/in/aashutosh-gandotra",
     },
     summary:
-      "Full-Stack Mobile Developer with 3+ years of experience building scalable React Native apps, web apps using React and Next JS and backend systems using Node.js, Express, PostgreSQL, and Prisma. Proficient in modern JavaScript/TypeScript, real-time data features, and cloud deployment. Strong focus on performance, clean architecture, and end-to-end product delivery.",
+      "Full Stack Engineer with 4+ years of experience building and shipping production web and mobile platforms end-to-end — including AI agent services, React Native, Node.js, and TypeScript products — real-time systems (WebRTC, WebSockets), and cloud-native backends (AWS, Docker, PostgreSQL, Redis) — across HealthTech, Ride-Hailing, and EV Mobility.",
     experience: [
       {
+        company: "Zaptric Mobility",
+        role: "Lead Full Stack Engineer",
+        duration: "Aug 2024 – Present",
+        location: "Gurgaon, India",
+        achievements: [
+          "Sole/lead engineer owning architecture and end-to-end delivery of a full-stack EV mobility platform.",
+          "Built the React/TypeScript admin dashboard, two React Native apps (driver, supervisor), and the Node.js/Prisma backend.",
+          "Engineered a WhatsApp-based EV charging flow (Node.js, Express, Prisma, PostgreSQL) letting users scan station QR codes and pay for charging sessions entirely through chat.",
+          "Integrated OCPI (Open Charge Point Interface) as the eMSP — station discovery, charging sessions, CDR billing, and tariff management for interoperability with third-party charge point operators (CPOs).",
+          "Built a production AI agent using Google Gemini and Model Context Protocol (MCP) to automate supervisor workflows, driver support, escalation handling, and slot allocation.",
+          "Developed a role-based access control (RBAC) fleet-management dashboard (React, TypeScript, Radix UI, Mapbox) covering vehicle lifecycle, maintenance audits, driver documentation, wallets, and payments.",
+          "Implemented a server-driven UI (SDUI) architecture in React Native and integrated real-time GPS navigation, biometric face-detection check-in (ML Kit), and payment gateways (Cashfree, Zoho) into production driver apps.",
+        ],
+      },
+      {
         company: "Ethereum Technologies",
-        role: "React Native & Full Stack Developer",
-        duration: "Jul 2023 – Present",
+        role: "Software Developer",
+        duration: "Jul 2023 – Aug 2024",
         location: "Jammu, India",
         achievements: [
-          "Developed and optimized mobile apps for All Cures (healthcare) and Saathi (elderly care) using React Native, Expo, Redux – achieving a 200% boost in app performance.",
-          "Implemented real-time chat and video calls via WebRTC, Firebase, and WebSockets, enhancing user engagement.",
-          "Built and deployed Igris's customer ride-booking app, enabling real-time ride booking and payments.",
-          "Designed and built Igris's Admin Dashboard using React + shadcn UI to manage users, rides, and driver earnings.",
-          "Integrated push notifications, geolocation, and secure authentication using Firebase and React Native libraries.",
+          "Built real-time telehealth platforms (All Cures, Saathi) enabling live video consultations using WebRTC, WebSockets, and React.",
+          "Improved application performance by 20% and Core Web Vitals by 200% through rendering and network optimizations.",
+          "Implemented containerized deployments with Docker, reducing deployment time and improving release reliability.",
         ],
       },
       {
@@ -34,7 +47,7 @@ export async function GET() {
         duration: "Apr 2022 – Jul 2023",
         location: "Jammu, India",
         achievements: [
-          "Contributed to the JK Attendance SED App frontend using React Native.",
+          "Designed UI/UX for a React Native school-attendance app and built a Python coding curriculum for high schoolers.",
         ],
       },
     ],
@@ -48,9 +61,32 @@ export async function GET() {
     ],
     projects: [
       {
+        name: "Zaptric Mobility – EV Platform (Driver App, Admin Dashboard, AI Agent)",
+        description:
+          "Sole/lead engineer of a full-stack EV mobility platform: React/TypeScript admin dashboard, React Native driver & supervisor apps, WhatsApp-based EV charging flow, OCPI eMSP integration, RBAC fleet management, and a Gemini/MCP-powered AI agent.",
+        technologies: [
+          "React Native",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Prisma",
+          "PostgreSQL",
+          "Mapbox",
+          "OCPI",
+          "Google Gemini",
+          "MCP",
+          "Cashfree",
+        ],
+        links: {
+          website: "https://zaptric.in",
+          playStore:
+            "https://play.google.com/store/apps/details?id=com.zaptric.pilotmain",
+        },
+      },
+      {
         name: "All Cures",
         description:
-          "Developed a real-time doctor consultation & engagement platform using WebRTC, WebSockets, Redux. Achieved 20% faster performance and 200% improvement in core web vitals.",
+          "Built a real-time telehealth platform enabling live video consultations using React Native, WebRTC, WebSockets, and Redux. Achieved 20% faster performance and 200% improvement in core web vitals.",
         technologies: [
           "React Native",
           "WebRTC",
@@ -61,27 +97,6 @@ export async function GET() {
         links: {
           appStore:
             "https://play.google.com/store/apps/details?id=com.allcures&hl=en&gl=US&pli=1",
-        },
-      },
-      {
-        name: "Igris – Driver App, Customer App & Admin Dashboard",
-        description:
-          "Architected and developed a complete ride-booking ecosystem from the ground up with React Native apps, scalable backend, and admin dashboard.",
-        technologies: [
-          "React Native",
-          "Node.js",
-          "Express",
-          "Prisma",
-          "PostgreSQL",
-          "WebSockets",
-          "Redis",
-          "React",
-          "shadcn UI",
-          "Docker",
-          "AWS",
-        ],
-        links: {
-          github: "https://github.com/Aashu-crypto/Driver-app",
         },
       },
       {
@@ -111,8 +126,18 @@ export async function GET() {
       languages: ["JavaScript", "TypeScript", "Python"],
       frontend: ["React Native", "React", "Next.js", "Redux", "Tailwind CSS"],
       backend: ["Node.js", "Express", "Prisma", "WebSockets", "WebRTC"],
-      databases: ["PostgreSQL", "Firebase", "Redis"],
-      tools: ["Docker", "Git", "VS Code", "AWS (EC2, S3)"],
+      databases: ["PostgreSQL", "Redis", "Firebase"],
+      cloud: ["AWS", "Docker"],
+      ai: ["Google Gemini API", "LLM Agent Development", "Model Context Protocol"],
+      tools: [
+        "Git",
+        "CI/CD",
+        "Mapbox",
+        "RBAC",
+        "Server-Driven UI (SDUI)",
+        "OCPI (eMSP)",
+        "Payment Gateways (Cashfree, Zoho)",
+      ],
     },
     certifications: [
       {

@@ -26,14 +26,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://aashutoshgandotra.dev"),
   title: {
     default:
-      "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
+      "Aashutosh Gandotra - Full Stack Engineer | React, React Native & Node.js Expert",
     template: "%s | Aashutosh Gandotra",
   },
   description:
-    "Full-Stack Mobile Developer with 3+ years experience in React Native, React, Next.js, Node.js, and TypeScript. Specialized in building scalable mobile apps, real-time features, and cloud deployment. Available for hire.",
+    "Full Stack Engineer with 4+ years experience building and shipping production web and mobile platforms end-to-end with React, React Native, Node.js, and TypeScript — including AI agent services, real-time systems (WebRTC, WebSockets), and cloud-native backends (AWS, Docker, PostgreSQL, Redis) across HealthTech, Ride-Hailing, and EV Mobility. Available for hire.",
   keywords: [
     "React Native Developer",
     "Full Stack Developer",
+    "Full Stack Engineer",
     "Mobile App Developer",
     "JavaScript Developer",
     "TypeScript Developer",
@@ -50,6 +51,11 @@ export const metadata: Metadata = {
     "Redux Developer",
     "PostgreSQL Developer",
     "Firebase Developer",
+    "AI Agent Developer",
+    "Google Gemini API",
+    "Model Context Protocol",
+    "EV Mobility Developer",
+    "OCPI Integration",
     "Jammu Developer",
     "India Developer",
   ],
@@ -69,9 +75,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
+      "Aashutosh Gandotra - Full Stack Engineer | React, React Native & Node.js Expert",
     description:
-      "Full-Stack Mobile Developer specializing in React Native, React, and Node.js. 3+ years experience building scalable applications.",
+      "Full Stack Engineer specializing in React, React Native, Node.js, and TypeScript. 4+ years shipping AI agent services, real-time systems, and cloud-native platforms.",
     url: "https://aashutoshgandotra.dev",
     siteName: "Aashutosh Gandotra Portfolio",
     locale: "en_US",
@@ -81,16 +87,16 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Aashutosh Gandotra - Full-Stack Mobile Developer",
+        alt: "Aashutosh Gandotra - Full Stack Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Aashutosh Gandotra - Full-Stack Mobile Developer | React Native Expert",
+      "Aashutosh Gandotra - Full Stack Engineer | React, React Native & Node.js Expert",
     description:
-      "Full-Stack Mobile Developer specializing in React Native, React, and Node.js. Building scalable apps with 3+ years of experience.",
+      "Full Stack Engineer specializing in React, React Native, and Node.js. Building AI agent services and cloud-native platforms with 4+ years of experience.",
     creator: "@AashutoshGando3",
     images: ["/og-image.png"],
   },

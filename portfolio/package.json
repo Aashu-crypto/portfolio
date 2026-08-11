@@ -9,23 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
- 
-    "@tabler/icons-react": "^3.33.0",
-    "@types/react-scroll": "^1.8.10",
-    "framer-motion": "^12.15.0",
-    "lucide-react": "^0.511.0",
     "next": "15.3.2",
-    "nodemailer": "^6.9.14",
     "react": "19.1.0",
-    "react-countup": "^6.5.3",
-    "react-dom": "19.1.0",
-    "react-icons": "^5.2.1",
-    "react-intersection-observer": "^9.16.0",
-    "react-scroll": "^1.9.0",
-    "react-typed": "^2.0.12"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "19.1.5",
     "@types/react-dom": "19.1.5",

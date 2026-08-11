@@ -1,69 +1,76 @@
-import "./globals.css";
-import { Zap, Building, GraduationCap, MapPin, Calendar } from "lucide-react";
-
-import Form from "@/components/Form";
-import Hero from "@/components/Hero";
-import TechSkills from "@/components/TechSkills";
-import AboutMe from "@/components/AboutMe";
-import Projects from "@/components/Projects";
-import Footer from "@/components/Footer";
+import WatchingFace from "@/components/WatchingFace";
+import {
+  experience,
+  projects,
+  site,
+  skills,
+} from "@/lib/content";
 
 export default function Home() {
-  const experiences = [
-    {
-      company: "Zaptric Mobility",
-      role: "Lead Full Stack Engineer",
-      duration: "Aug 2024 – Present",
-      location: "Gurgaon, India",
-      icon: <Zap className="w-5 h-5" />,
-      bullets: [
-        "Sole engineer owning architecture and end-to-end delivery of a full-stack EV mobility platform (React Native apps, React admin, Node.js/Prisma backend).",
-        "Built WhatsApp-based EV charging with OCPI integration for station discovery, session billing, and tariff management.",
-        "Shipped a production AI agent (Google Gemini + MCP) for supervisor workflows, driver support, and slot allocation.",
-      ],
-    },
-    {
-      company: "Ethereum Technologies",
-      role: "Software Developer",
-      duration: "Jul 2023 – Aug 2024",
-      location: "Jammu, India",
-      icon: <Building className="w-5 h-5" />,
-      bullets: [
-        "Built real-time telehealth platforms (All Cures, Saathi) with React Native, WebRTC, and WebSockets.",
-        "Improved app performance by 20% and Core Web Vitals by 200% through rendering and network optimizations.",
-        "Built Igris ride-booking app and admin dashboard; deployed with Docker for faster, more reliable releases.",
-      ],
-    },
-    {
-      company: "Ministry of Education, Government of India",
-      role: "Computer Science Teacher",
-      duration: "Apr 2022 – Jul 2023",
-      location: "Jammu, India",
-      icon: <GraduationCap className="w-5 h-5" />,
-      bullets: [
-        "Designed UI/UX for JK Attendance SED, a React Native school attendance app.",
-        "Built a Python coding curriculum for high school students with project-based learning.",
-      ],
-    },
-  ];
-
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    mainEntity: {
-      "@type": "Person",
-      name: "Aashutosh Gandotra",
-      jobTitle: "Full Stack Engineer",
-      description:
-        "Full Stack Engineer with 4+ years experience building production web and mobile platforms with React, React Native, and Node.js.",
-      url: "https://aashutoshgandotra.dev",
-      sameAs: [
-        "https://www.linkedin.com/in/aashutosh-gandotra/",
-        "https://github.com/Aashu-crypto",
-        "https://x.com/AashutoshGando3",
-      ],
-      email: "ashugandotra14@gmail.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: site.name,
+        description:
+          "Lead Full Stack Engineer in Gurugram, India, from Jammu and Kashmir. React Native, Node.js, and TypeScript. Open to remote.",
+        inLanguage: "en-IN",
+        publisher: { "@id": `${site.url}/#person` },
+      },
+      {
+        "@type": "Person",
+        "@id": `${site.url}/#person`,
+        name: site.name,
+        jobTitle: "Lead Full Stack Engineer",
+        description:
+          "Lead Full Stack Engineer in Gurugram, India, from Jammu and Kashmir. React Native, Node.js, and TypeScript. Open to remote.",
+        url: site.url,
+        email: site.email,
+        image: `${site.url}/opengraph-image`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Gurugram",
+          addressRegion: "Haryana",
+          addressCountry: "IN",
+        },
+        homeLocation: {
+          "@type": "Place",
+          name: "Jammu and Kashmir, India",
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "Jammu and Kashmir",
+            addressCountry: "IN",
+          },
+        },
+        knowsAbout: [
+          "React Native",
+          "React",
+          "Node.js",
+          "TypeScript",
+          "Full Stack Engineering",
+          "PostgreSQL",
+          "AWS",
+        ],
+        sameAs: [site.linkedin, site.github],
+        worksFor: {
+          "@type": "Organization",
+          name: "Zaptric Mobility",
+          url: "https://zaptric.in/",
+        },
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${site.url}/#profilepage`,
+        url: site.url,
+        name: `${site.name} — Lead Full Stack Engineer`,
+        isPartOf: { "@id": `${site.url}/#website` },
+        about: { "@id": `${site.url}/#person` },
+        mainEntity: { "@id": `${site.url}/#person` },
+      },
+    ],
   };
 
   return (
@@ -72,76 +79,248 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <main className="flex flex-col font-sans">
-        <Hero />
-        <AboutMe />
+
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:border focus:border-border focus:bg-bg focus:px-3 focus:py-2"
+      >
+        Skip to content
+      </a>
+
+      <main
+        id="main"
+        className="mx-auto w-full max-w-page px-4 py-8 sm:px-6 sm:py-10 lg:px-8"
+      >
+        {/* Identity + contact in one compact band */}
+        <header className="mb-8 border-b border-border pb-6">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h1 className="display text-[clamp(2rem,5vw,2.75rem)] text-fg">
+                {site.name}
+              </h1>
+              <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-accent sm:text-[0.8rem]">
+                {site.role}
+              </p>
+              <p className="lede mt-2 max-w-measure text-fg">{site.title}</p>
+              <p className="meta mt-2">
+                {site.location}
+                <span className="mx-1.5 text-border" aria-hidden="true">
+                  ·
+                </span>
+                {site.remote}
+                <span className="mx-1.5 text-border" aria-hidden="true">
+                  ·
+                </span>
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              </p>
+              <nav aria-label="Primary" className="nav-links mt-3">
+                <ul className="flex flex-wrap items-center gap-x-1 gap-y-1">
+                  <li>
+                    <a href={site.resume} download>
+                      Resume (PDF)
+                    </a>
+                  </li>
+                  <li aria-hidden="true" className="px-2 text-border">
+                    /
+                  </li>
+                  <li>
+                    <a
+                      href={site.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  </li>
+                  <li aria-hidden="true" className="px-2 text-border">
+                    /
+                  </li>
+                  <li>
+                    <a
+                      href={site.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <WatchingFace />
+          </div>
+        </header>
+
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.35fr)] lg:gap-10">
+          <div className="space-y-8">
+            <section aria-labelledby="experience-heading">
+              <h2 id="experience-heading" className="section-label">
+                Experience
+              </h2>
+              <ol className="space-y-3">
+                {experience.map((job) => (
+                  <li key={`${job.company}-${job.dates}`}>
+                    <article>
+                      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+                        <h3 className="text-[0.98rem] font-semibold tracking-tight text-fg">
+                          {job.role}
+                          <span className="font-normal text-muted">
+                            {" "}
+                            · {job.company}
+                          </span>
+                        </h3>
+                        <p className="text-xs tabular-nums text-muted">
+                          {job.dates}
+                        </p>
+                      </div>
+                      <p className="mt-0.5 text-xs text-muted">{job.location}</p>
+                      <p className="mt-1 text-[0.92rem] leading-snug text-fg">
+                        {job.summary}
+                      </p>
+                    </article>
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            <section aria-labelledby="skills-heading">
+              <h2 id="skills-heading" className="section-label">
+                Skills
+              </h2>
+              <dl className="space-y-1.5">
+                {skills.map((group) => (
+                  <div
+                    key={group.label}
+                    className="grid grid-cols-[7.5rem_1fr] gap-2 text-[0.9rem] sm:grid-cols-[8.5rem_1fr]"
+                  >
+                    <dt className="font-semibold text-fg">{group.label}</dt>
+                    <dd className="leading-snug text-muted">{group.items}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+          </div>
+
+          <section aria-labelledby="work-heading">
+            <h2 id="work-heading" className="section-label">
+              Selected work
+            </h2>
+            <ol className="space-y-5">
+              {projects.map((project) => (
+                <li
+                  key={project.name}
+                  className="border-t border-border pt-4 first:border-t-0 first:pt-0"
+                >
+                  <article>
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                      <h3 className="project-title text-fg">{project.name}</h3>
+                      {project.links.length > 0 && (
+                        <p className="nav-links flex flex-wrap items-center gap-x-1 text-[0.85rem]">
+                          {project.links.map((link, index) => (
+                            <span
+                              key={link.href}
+                              className="inline-flex items-center"
+                            >
+                              {index > 0 && (
+                                <span
+                                  aria-hidden="true"
+                                  className="px-1.5 text-border"
+                                >
+                                  /
+                                </span>
+                              )}
+                              <a
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {link.label}
+                              </a>
+                            </span>
+                          ))}
+                        </p>
+                      )}
+                    </div>
+                    <p className="mt-1 text-[0.92rem] leading-snug text-muted">
+                      {project.problem}
+                    </p>
+                    <p className="mt-1.5 text-[0.8rem] leading-snug text-fg">
+                      <span className="font-semibold">Stack</span>
+                      <span className="text-muted"> — {project.stack}</span>
+                    </p>
+                    <ul className="mt-1.5 list-disc space-y-1 pl-4 text-[0.9rem] leading-snug text-fg marker:text-accent">
+                      {project.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </section>
+        </div>
 
         <section
-          className="py-16 px-4"
-          id="experience"
-          aria-labelledby="experience-heading"
+          aria-labelledby="contact-heading"
+          className="mt-8 border-t border-border pt-6"
         >
-          <div className="max-w-3xl mx-auto">
-            <h2
-              id="experience-heading"
-              className="text-3xl md:text-4xl font-bold text-white font-jetbrains mb-10 text-center"
-            >
-              Experience
-            </h2>
-
-            <div className="space-y-8">
-              {experiences.map((exp) => (
-                <article
-                  key={exp.company}
-                  className="border border-gray-700 rounded-xl p-6 bg-gray-800/40 hover:border-green-400/40 transition-colors"
+          <h2 id="contact-heading" className="section-label">
+            Contact me
+          </h2>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+            <div>
+              <p className="display text-xl text-fg sm:text-2xl">
+                <a
+                  href={`mailto:${site.email}?subject=Role%20inquiry%20%E2%80%94%20${encodeURIComponent(site.name)}`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                    <div className="flex items-start gap-4">
-                      <div className="text-green-400 p-2 bg-gray-700 rounded-lg shrink-0">
-                        {exp.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-white font-jetbrains">
-                          {exp.role}
-                        </h3>
-                        <p className="text-green-400 font-medium">
-                          {exp.company}
-                        </p>
-                        <p className="text-gray-400 text-sm flex items-center gap-1 mt-1">
-                          <MapPin className="w-3.5 h-3.5" />
-                          {exp.location}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-gray-400 text-sm flex items-center gap-1 sm:shrink-0">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {exp.duration}
-                    </p>
-                  </div>
-
-                  <ul className="space-y-2 pl-1">
-                    {exp.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className="text-gray-300 text-sm leading-relaxed flex gap-2"
-                      >
-                        <span className="text-green-400 shrink-0 mt-1.5">
-                          •
-                        </span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
+                  {site.email}
+                </a>
+              </p>
+              <p className="meta mt-1.5 max-w-measure">
+                Open to remote React Native / full-stack roles.
+              </p>
             </div>
+            <nav aria-label="Contact" className="nav-links shrink-0">
+              <ul className="flex flex-wrap items-center gap-x-1 gap-y-1">
+                <li>
+                  <a
+                    href={`mailto:${site.email}?subject=Role%20inquiry%20%E2%80%94%20${encodeURIComponent(site.name)}`}
+                  >
+                    Email
+                  </a>
+                </li>
+                <li aria-hidden="true" className="px-2 text-border">
+                  /
+                </li>
+                <li>
+                  <a
+                    href={site.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li aria-hidden="true" className="px-2 text-border">
+                  /
+                </li>
+                <li>
+                  <a href={site.resume} download>
+                    Resume (PDF)
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </section>
 
-        <Projects />
-        <TechSkills />
-        <Form />
-        <Footer />
+        <footer className="mt-6 flex flex-col gap-1 border-t border-border pt-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {site.name}
+          </p>
+          <p>Gurugram · Jammu and Kashmir · Remote</p>
+        </footer>
       </main>
     </>
   );

@@ -1,38 +1,18 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://aashutoshgandotra.dev";
-
   return [
     {
-      url: baseUrl,
+      url: "https://aashutoshgandotra.dev",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/#skills`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#contact`,
+      url: "https://aashutoshgandotra.dev/Aashutosh_Resume.pdf",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/api/resume`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
   ];
 }

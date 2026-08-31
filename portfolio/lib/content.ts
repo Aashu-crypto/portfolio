@@ -60,23 +60,6 @@ export const projects: Project[] = [
       { label: "Website", href: "https://www.all-cures.com/" },
     ],
   },
-  {
-    name: "Saathi",
-    problem: "Mobile + admin for elderly care with auth and payments.",
-    stack: "React Native, React, Firebase",
-    bullets: [
-      "Built React Native app and React admin for care management.",
-      "Shipped authentication and payment flows for family users.",
-    ],
-    links: [
-      {
-        label: "Play Store",
-        href: "https://play.google.com/store/apps/details?id=com.aashutoshgandotra14.saathi&hl=en",
-      },
-      { label: "Admin", href: "https://saath-web.vercel.app" },
-      { label: "Code", href: "https://github.com/Aashu-crypto/Saathi" },
-    ],
-  },
 ];
 
 export const experience = [
@@ -94,7 +77,7 @@ export const experience = [
     dates: "Jul 2023 – Aug 2024",
     location: "Jammu",
     summary:
-      "Telehealth apps (All Cures, Saathi) with React Native + WebRTC; ~20% perf / ~200% CWV gains; Docker releases.",
+      "Telehealth apps with React Native + WebRTC; ~20% perf / ~200% CWV gains; Docker releases.",
   },
   {
     company: "Ministry of Education, Govt. of India",

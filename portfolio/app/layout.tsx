@@ -18,7 +18,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 const title = "Aashutosh Gandotra — Lead Full Stack Engineer";
 const description =
-  "Lead Full Stack Engineer in Gurugram, India (from Jammu and Kashmir). 4+ years building React Native, Node.js, and TypeScript platforms. Open to remote.";
+  "Lead Full Stack Engineer specializing in React Native and Node.js, with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.";
 
 export const viewport: Viewport = {
   themeColor: "#F5F6F8",
@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aashutoshgandotra.dev"),
+  metadataBase: new URL("https://www.aashutoshgandotra.com"),
   title: {
     default: title,
     template: "%s | Aashutosh Gandotra",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     "Zaptric",
   ],
   authors: [
-    { name: "Aashutosh Gandotra", url: "https://aashutoshgandotra.dev" },
+    { name: "Aashutosh Gandotra", url: "https://www.aashutoshgandotra.com" },
   ],
   creator: "Aashutosh Gandotra",
   publisher: "Aashutosh Gandotra",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://aashutoshgandotra.dev",
+    canonical: "https://www.aashutoshgandotra.com",
   },
   icons: {
     icon: [
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "https://aashutoshgandotra.dev",
+    url: "https://www.aashutoshgandotra.com",
     siteName: "Aashutosh Gandotra",
     locale: "en_IN",
     type: "profile",

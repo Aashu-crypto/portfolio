@@ -2,14 +2,14 @@ export const site = {
   name: "Aashutosh Gandotra",
   role: "Lead Full Stack Engineer",
   title:
-    "React Native, Node.js, TypeScript — 4+ years shipping mobile-led platforms end to end.",
+    "React Native and Node.js specialist with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.",
   location: "Gurugram, India",
   remote: "Open to remote",
   email: "ashugandotra14@gmail.com",
   resume: "/Aashutosh_Resume.pdf",
   github: "https://github.com/Aashu-crypto",
   linkedin: "https://www.linkedin.com/in/aashutosh-gandotra/",
-  url: "https://aashutoshgandotra.dev",
+  url: "https://www.aashutoshgandotra.com",
 } as const;
 
 export type ProjectLink = { label: string; href: string };
@@ -50,12 +50,12 @@ export const projects: Project[] = [
     stack: "React Native, WebRTC, WebSockets, Redux, Firebase",
     bullets: [
       "Built the React Native telehealth client with WebRTC/WebSockets.",
-      "~20% faster app work; ~200% Core Web Vitals improvement.",
+      "Delivered video consultation, chat, content, and payment experiences for patient workflows.",
     ],
     links: [
       {
         label: "App Store",
-        href: "https://apps.apple.com/be/app/all-cures/id1659590351",
+        href: "https://apps.apple.com/ie/app/all-cures/id6748640097",
       },
       { label: "Website", href: "https://www.all-cures.com/" },
     ],
@@ -68,26 +68,38 @@ export const experience = [
     role: "Lead Full Stack Engineer",
     dates: "Aug 2024 – Present",
     location: "Gurugram",
-    summary:
-      "Sole/lead engineer for EV mobility — React Native apps, React admin, Node/Prisma, OCPI charging, Gemini/MCP agent.",
+    bullets: [
+      "Own end-to-end delivery of two React Native apps, a React admin dashboard, and Node.js/Prisma services for EV mobility operations.",
+      "Shipped OCPI charging, payments, fleet workflows, and a Gemini/MCP operations agent.",
+    ],
   },
   {
     company: "Etherium Technologies",
     role: "Software Developer",
     dates: "Jul 2023 – Aug 2024",
     location: "Jammu",
-    summary:
-      "Telehealth apps with React Native + WebRTC; ~20% perf / ~200% CWV gains; Docker releases.",
+    bullets: [
+      "Built real-time telehealth experiences in React Native using WebRTC, WebSockets, Redux, and Firebase.",
+      "Improved rendering, network performance, and release reliability through targeted optimization and Dockerized deployments.",
+    ],
   },
   {
     company: "Ministry of Education, Govt. of India",
     role: "Computer Science Teacher",
     dates: "Apr 2022 – Jul 2023",
     location: "Jammu",
-    summary:
-      "UI/UX for a React Native school attendance app; Python curriculum for high school students.",
+    bullets: [
+      "Contributed UI/UX for a React Native school-attendance app and designed a project-based Python curriculum for high school students.",
+    ],
   },
 ] as const;
+
+export const education = {
+  degree: "B.E. in Computer Science",
+  school: "Government College of Engineering and Technology",
+  dates: "2018 – 2022",
+  detail: "GPA 8.0/10",
+} as const;
 
 export const skills = [
   {

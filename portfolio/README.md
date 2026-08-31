@@ -20,7 +20,7 @@ A modern, responsive portfolio website showcasing my experience as a Full-Stack 
 
 - **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, structured data
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Performance Optimized**: Next.js 14 with optimized images and loading
+- **Performance Optimized**: Next.js 16 with optimized assets and static rendering
 - **Resume API**: JSON endpoint for resume data (`/api/resume`)
 - **Sitemap & Robots.txt**: Automated SEO files
 - **Accessibility**: ARIA labels and semantic HTML
@@ -44,10 +44,9 @@ A modern, responsive portfolio website showcasing my experience as a Full-Stack 
 
 ## 🎯 Key Achievements Highlighted
 
-- **200% performance boost** in mobile app optimization
-- **20% faster performance** and core web vitals improvement
-- **3+ years** of professional development experience
-- **Multiple live applications** on Google Play Store
+- **Production performance work** across rendering, networking, and Core Web Vitals
+- **4+ years** of professional experience across engineering and technology education
+- **Multiple live mobile products** across healthcare and EV mobility
 - **Full-stack expertise** from mobile to cloud deployment
 
 ## 📊 Skills Showcase

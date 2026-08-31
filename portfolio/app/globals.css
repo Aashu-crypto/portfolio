@@ -121,6 +121,39 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.primary-action,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.25rem;
+  padding: 0.38rem 0.7rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.primary-action {
+  background: var(--accent);
+  color: white;
+}
+
+.primary-action:hover {
+  background: var(--accent-hover);
+  color: white;
+}
+
+.secondary-action {
+  background: transparent;
+  color: var(--accent);
+}
+
+.secondary-action:hover {
+  border-color: var(--accent-hover);
+  color: var(--accent-hover);
+}
+
 .project-title {
   font-family: var(--font-display);
   font-size: 1.2rem;

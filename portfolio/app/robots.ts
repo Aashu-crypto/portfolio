@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://aashutoshgandotra.dev/sitemap.xml",
-    host: "https://aashutoshgandotra.dev",
+    sitemap: "https://www.aashutoshgandotra.com/sitemap.xml",
+    host: "https://www.aashutoshgandotra.com",
   };
 }

@@ -53,7 +53,7 @@ export default function OpenGraphImage() {
               fontFamily: "ui-sans-serif, system-ui, sans-serif",
             }}
           >
-            aashutoshgandotra.dev
+            aashutoshgandotra.com
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import WatchingFace from "@/components/WatchingFace";
 import {
+  education,
   experience,
   projects,
   site,
@@ -15,8 +16,7 @@ export default function Home() {
         "@id": `${site.url}/#website`,
         url: site.url,
         name: site.name,
-        description:
-          "Lead Full Stack Engineer in Gurugram, India, from Jammu and Kashmir. React Native, Node.js, and TypeScript. Open to remote.",
+        description: site.title,
         inLanguage: "en-IN",
         publisher: { "@id": `${site.url}/#person` },
       },
@@ -25,8 +25,7 @@ export default function Home() {
         "@id": `${site.url}/#person`,
         name: site.name,
         jobTitle: "Lead Full Stack Engineer",
-        description:
-          "Lead Full Stack Engineer in Gurugram, India, from Jammu and Kashmir. React Native, Node.js, and TypeScript. Open to remote.",
+        description: site.title,
         url: site.url,
         email: site.email,
         image: `${site.url}/opengraph-image`,
@@ -113,17 +112,19 @@ export default function Home() {
                 </span>
                 <a href={`mailto:${site.email}`}>{site.email}</a>
               </p>
-              <nav aria-label="Primary" className="nav-links mt-3">
-                <ul className="flex flex-wrap items-center gap-x-1 gap-y-1">
+              <nav aria-label="Primary" className="mt-4">
+                <ul className="flex flex-wrap items-center gap-2">
                   <li>
-                    <a href={site.resume} download>
-                      Resume (PDF)
+                    <a className="primary-action" href={site.resume} download>
+                      Download résumé
                     </a>
                   </li>
-                  <li aria-hidden="true" className="px-2 text-border">
-                    /
-                  </li>
                   <li>
+                    <a className="secondary-action" href={`mailto:${site.email}?subject=Role%20inquiry%20%E2%80%94%20${encodeURIComponent(site.name)}`}>
+                      Email me
+                    </a>
+                  </li>
+                  <li className="nav-links ml-1">
                     <a
                       href={site.github}
                       target="_blank"
@@ -132,10 +133,7 @@ export default function Home() {
                       GitHub
                     </a>
                   </li>
-                  <li aria-hidden="true" className="px-2 text-border">
-                    /
-                  </li>
-                  <li>
+                  <li className="nav-links">
                     <a
                       href={site.linkedin}
                       target="_blank"
@@ -174,9 +172,11 @@ export default function Home() {
                         </p>
                       </div>
                       <p className="mt-0.5 text-xs text-muted">{job.location}</p>
-                      <p className="mt-1 text-[0.92rem] leading-snug text-fg">
-                        {job.summary}
-                      </p>
+                      <ul className="mt-1.5 list-disc space-y-1 pl-4 text-[0.9rem] leading-snug text-fg marker:text-accent">
+                        {job.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
                     </article>
                   </li>
                 ))}
@@ -198,6 +198,22 @@ export default function Home() {
                   </div>
                 ))}
               </dl>
+            </section>
+
+            <section aria-labelledby="education-heading">
+              <h2 id="education-heading" className="section-label">
+                Education
+              </h2>
+              <div className="text-[0.9rem] leading-snug">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+                  <p className="font-semibold text-fg">
+                    {education.degree}
+                    <span className="font-normal text-muted"> · {education.school}</span>
+                  </p>
+                  <p className="text-xs tabular-nums text-muted">{education.dates}</p>
+                </div>
+                <p className="mt-1 text-xs text-muted">{education.detail}</p>
+              </div>
             </section>
 
           </div>

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Aashutosh Gandotra",
     short_name: "AG",
     description:
-      "Lead Full Stack Engineer in Gurugram, India (from Jammu and Kashmir). React Native, Node.js, TypeScript. Open to remote.",
+      "Lead Full Stack Engineer specializing in React Native and Node.js, with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.",
     start_url: "/",
     display: "standalone",
     background_color: "#F5F6F8",

@@ -5,11 +5,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Aashutosh Gandotra",
     short_name: "AG",
     description:
-      "Lead Full Stack Engineer specializing in React Native and Node.js, with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.",
+      "Full-stack AI-native developer building production mobile apps, real-time platforms, cloud backends, and agentic workflows.",
     start_url: "/",
     display: "standalone",
-    background_color: "#F5F6F8",
-    theme_color: "#F5F6F8",
+    background_color: "#07090F",
+    theme_color: "#07090F",
     lang: "en",
     icons: [
       {

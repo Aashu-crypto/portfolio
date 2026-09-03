@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -9,20 +9,23 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: "swap",
 });
 
-const ibmPlexSerif = IBM_Plex_Serif({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-ibm-plex-serif",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-mono",
   display: "swap",
 });
 
-const title = "Aashutosh Gandotra — Lead Full Stack Engineer";
+const title = "Aashutosh Gandotra — Full-Stack AI-Native Developer";
 const description =
+  "Full-stack AI-native developer building production mobile apps, real-time platforms, cloud backends, and agentic workflows.";
+const socialTitle = "Aashutosh Gandotra — Lead Full Stack Engineer";
+const socialDescription =
   "Lead Full Stack Engineer specializing in React Native and Node.js, with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.";
 
 export const viewport: Viewport = {
-  themeColor: "#F5F6F8",
-  colorScheme: "light",
+  themeColor: "#07090F",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -37,6 +40,10 @@ export const metadata: Metadata = {
   applicationName: "Aashutosh Gandotra",
   keywords: [
     "Aashutosh Gandotra",
+    "Full-Stack AI-Native Developer",
+    "AI-Native Developer",
+    "AI Agent Developer",
+    "Model Context Protocol",
     "Lead Full Stack Engineer",
     "React Native Developer",
     "Full Stack Engineer",
@@ -74,8 +81,8 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title,
-    description,
+    title: socialTitle,
+    description: socialDescription,
     url: "https://www.aashutoshgandotra.com",
     siteName: "Aashutosh Gandotra",
     locale: "en_IN",
@@ -86,8 +93,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: socialTitle,
+    description: socialDescription,
     creator: "@AashutoshGando3",
   },
   robots: {
@@ -111,7 +118,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}
+      className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
     >
       <body className="antialiased">{children}</body>
     </html>

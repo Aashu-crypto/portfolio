@@ -1,10 +1,13 @@
 export const site = {
   name: "Aashutosh Gandotra",
-  role: "Lead Full Stack Engineer",
-  title:
-    "React Native and Node.js specialist with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.",
+  role: "Full-Stack AI-Native Developer",
+  title: "I build intelligent products from interface to infrastructure.",
+  description:
+    "Full-stack AI-native developer building production mobile apps, real-time platforms, cloud backends, and agentic workflows.",
   location: "Gurugram, India",
+  hometown: "Jammu and Kashmir",
   remote: "Open to remote",
+  availability: "Available for select remote opportunities",
   email: "ashugandotra14@gmail.com",
   resume: "/Aashutosh_Resume.pdf",
   github: "https://github.com/Aashu-crypto",
@@ -15,50 +18,98 @@ export const site = {
 export type ProjectLink = { label: string; href: string };
 
 export type Project = {
+  number: string;
+  kicker: string;
   name: string;
-  problem: string;
-  stack: string;
-  bullets: string[];
+  headline: string;
+  summary: string;
+  stack: string[];
+  capabilities: string[];
+  contributions: string[];
   links: ProjectLink[];
+  image: string;
+  imageAlt: string;
+  secondaryImage?: string;
+  secondaryImageAlt?: string;
 };
 
 export const projects: Project[] = [
   {
+    number: "01",
+    kicker: "EV mobility · Lead ownership",
     name: "Zaptric Mobility",
-    problem:
-      "One stack for EV driver apps, fleet ops, charging, and payments.",
-    stack: "React Native, React, Node.js, Prisma, PostgreSQL, OCPI, Gemini/MCP",
-    bullets: [
-      "Owned end-to-end platform: React Native driver/supervisor apps, React admin, Node.js/Prisma backend.",
-      "Shipped WhatsApp EV charging + OCPI eMSP, and a production Gemini/MCP agent for ops workflows.",
+    headline: "One intelligent system for every moving part of EV operations.",
+    summary:
+      "A connected product suite spanning driver and supervisor apps, fleet operations, charging, payments, and an AI operations agent.",
+    stack: [
+      "React Native",
+      "React",
+      "Node.js",
+      "Prisma",
+      "PostgreSQL",
+      "OCPI",
+      "Gemini",
+      "MCP",
+    ],
+    capabilities: [
+      "Mobile products",
+      "Fleet operations",
+      "Charging + payments",
+      "AI operations",
+    ],
+    contributions: [
+      "Own end-to-end delivery across two React Native apps, a React admin dashboard, and Node.js/Prisma services.",
+      "Shipped OCPI charging, payments, fleet workflows, and a production Gemini/MCP agent for operations.",
     ],
     links: [
-      { label: "Live", href: "https://zaptric.in/" },
+      { label: "Live site", href: "https://zaptric.in/" },
       {
         label: "Play Store",
         href: "https://play.google.com/store/apps/details?id=com.zaptric.pilotmain",
       },
       {
-        label: "Code",
+        label: "View code",
         href: "https://github.com/Aashu-crypto/react-native-zaptric-ui",
       },
     ],
+    image: "/images/driverapp.png",
+    imageAlt: "Zaptric driver application screens",
+    secondaryImage: "/images/dashboard.png",
+    secondaryImageAlt: "Zaptric fleet operations dashboard",
   },
   {
+    number: "02",
+    kicker: "Telehealth · Real-time product",
     name: "All Cures",
-    problem: "Live video consults for patients and clinicians.",
-    stack: "React Native, WebRTC, WebSockets, Redux, Firebase",
-    bullets: [
-      "Built the React Native telehealth client with WebRTC/WebSockets.",
-      "Delivered video consultation, chat, content, and payment experiences for patient workflows.",
+    headline: "Live clinical care without the waiting-room friction.",
+    summary:
+      "A real-time healthcare experience that brings consultation, messaging, content, and payments into one mobile workflow.",
+    stack: [
+      "React Native",
+      "WebRTC",
+      "WebSockets",
+      "Redux",
+      "Firebase",
+    ],
+    capabilities: [
+      "Video consultation",
+      "Realtime messaging",
+      "Patient journeys",
+      "Payments",
+    ],
+    contributions: [
+      "Built the React Native telehealth client with WebRTC and WebSockets at its core.",
+      "Delivered consultation, chat, content, and payment experiences for patient workflows.",
     ],
     links: [
       {
         label: "App Store",
         href: "https://apps.apple.com/ie/app/all-cures/id6748640097",
       },
-      { label: "Website", href: "https://www.all-cures.com/" },
+      { label: "Live site", href: "https://www.all-cures.com/" },
     ],
+    image: "/images/allcures.png",
+    imageAlt: "All Cures telehealth application screens",
   },
 ];
 
@@ -69,8 +120,8 @@ export const experience = [
     dates: "Aug 2024 – Present",
     location: "Gurugram",
     bullets: [
-      "Own end-to-end delivery of two React Native apps, a React admin dashboard, and Node.js/Prisma services for EV mobility operations.",
-      "Shipped OCPI charging, payments, fleet workflows, and a Gemini/MCP operations agent.",
+      "Own mobile, web, and backend delivery for an EV mobility platform used across driver and operations workflows.",
+      "Build AI-assisted operations, OCPI charging, payments, fleet tooling, and the systems connecting them.",
     ],
   },
   {
@@ -103,23 +154,31 @@ export const education = {
 
 export const skills = [
   {
-    label: "Languages",
-    items: "JavaScript, TypeScript, Python",
+    number: "01",
+    title: "Product engineering",
+    description:
+      "Mobile and web products designed as one coherent system—from the first interaction to release.",
+    items: ["React Native", "React", "Next.js", "TypeScript", "Redux"],
   },
   {
-    label: "Mobile & frontend",
-    items: "React Native, React, Next.js, Redux, Tailwind",
+    number: "02",
+    title: "AI-native systems",
+    description:
+      "Production workflows that give models useful context, trusted tools, and clear operational boundaries.",
+    items: ["Gemini", "MCP", "AI agents", "Workflow automation"],
   },
   {
-    label: "Backend",
-    items: "Node.js, Express, Prisma, REST, WebSockets, WebRTC",
-  },
-  {
-    label: "Data & cloud",
-    items: "PostgreSQL, Redis, Firebase, AWS, Docker",
-  },
-  {
-    label: "AI & tooling",
-    items: "Gemini, MCP, Mapbox, OCPI, SDUI, RBAC, Cashfree, Zoho",
+    number: "03",
+    title: "Backend & platform",
+    description:
+      "Realtime services, data, payments, and cloud infrastructure built to support products in motion.",
+    items: [
+      "Node.js",
+      "PostgreSQL",
+      "WebSockets",
+      "WebRTC",
+      "AWS",
+      "Docker",
+    ],
   },
 ] as const;

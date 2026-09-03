@@ -17,14 +17,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-ibm-plex-sans)", "ui-sans-serif", "sans-serif"],
-        display: [
-          "var(--font-ibm-plex-serif)",
-          "Iowan Old Style",
-          "Palatino Linotype",
-          "Palatino",
-          "Georgia",
-          "serif",
-        ],
+        display: ["var(--font-ibm-plex-sans)", "ui-sans-serif", "sans-serif"],
+        mono: ["var(--font-ibm-plex-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
         measure: "var(--measure)",

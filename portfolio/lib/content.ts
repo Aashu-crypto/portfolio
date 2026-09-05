@@ -1,13 +1,13 @@
 export const site = {
   name: "Aashutosh Gandotra",
-  role: "Full-Stack AI-Native Developer",
+  role: "Lead Full Stack Engineer",
   title: "I build intelligent products from interface to infrastructure.",
   description:
-    "Full-stack AI-native developer building production mobile apps, real-time platforms, cloud backends, and agentic workflows.",
+    "Lead Full Stack Engineer building React Native apps and Node.js backends, with experience in EV mobility, telehealth, and production AI. Based in Gurugram, open to remote roles.",
   location: "Gurugram, India",
   hometown: "Jammu and Kashmir",
   remote: "Open to remote",
-  availability: "Available for select remote opportunities",
+  availability: "Open to full-time remote roles",
   email: "ashugandotra14@gmail.com",
   resume: "/Aashutosh_Resume.pdf",
   github: "https://github.com/Aashu-crypto",
@@ -22,6 +22,8 @@ export type Project = {
   kicker: string;
   name: string;
   headline: string;
+  role: string;
+  context: string;
   summary: string;
   stack: string[];
   capabilities: string[];
@@ -36,9 +38,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     number: "01",
-    kicker: "EV mobility · Lead ownership",
+    kicker: "EV mobility · Production platform",
     name: "Zaptric Mobility",
-    headline: "One intelligent system for every moving part of EV operations.",
+    headline: "Connecting drivers, fleet operations, charging, and payments.",
+    role: "Lead Full Stack Engineer",
+    context: "At Zaptric Mobility · 2024–present",
     summary:
       "A connected product suite spanning driver and supervisor apps, fleet operations, charging, payments, and an AI operations agent.",
     stack: [
@@ -79,9 +83,11 @@ export const projects: Project[] = [
   },
   {
     number: "02",
-    kicker: "Telehealth · Real-time product",
+    kicker: "Healthcare · Production app",
     name: "All Cures",
-    headline: "Live clinical care without the waiting-room friction.",
+    headline: "Bringing video consultations and patient care into one app.",
+    role: "Software Developer",
+    context: "At Etherium Technologies · 2023–2024",
     summary:
       "A real-time healthcare experience that brings consultation, messaging, content, and payments into one mobile workflow.",
     stack: [
@@ -155,30 +161,23 @@ export const education = {
 export const skills = [
   {
     number: "01",
-    title: "Product engineering",
+    title: "Mobile & web",
     description:
-      "Mobile and web products designed as one coherent system—from the first interaction to release.",
+      "React Native apps and React dashboards, from patient consultations to driver and fleet workflows.",
     items: ["React Native", "React", "Next.js", "TypeScript", "Redux"],
   },
   {
     number: "02",
-    title: "AI-native systems",
+    title: "Backend & cloud",
     description:
-      "Production workflows that give models useful context, trusted tools, and clear operational boundaries.",
-    items: ["Gemini", "MCP", "AI agents", "Workflow automation"],
+      "Node.js services for payments, charging, and real-time communication, backed by PostgreSQL and cloud infrastructure.",
+    items: ["Node.js", "Prisma", "PostgreSQL", "WebSockets", "WebRTC", "AWS", "Docker"],
   },
   {
     number: "03",
-    title: "Backend & platform",
+    title: "Applied AI",
     description:
-      "Realtime services, data, payments, and cloud infrastructure built to support products in motion.",
-    items: [
-      "Node.js",
-      "PostgreSQL",
-      "WebSockets",
-      "WebRTC",
-      "AWS",
-      "Docker",
-    ],
+      "A production Gemini agent connected to operations tools through MCP, bringing AI into existing product workflows.",
+    items: ["Gemini", "MCP", "AI agents", "Workflow automation"],
   },
 ] as const;

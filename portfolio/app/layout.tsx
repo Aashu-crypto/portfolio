@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { site } from "@/lib/content";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -16,12 +17,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const title = "Aashutosh Gandotra — Full-Stack AI-Native Developer";
-const description =
-  "Full-stack AI-native developer building production mobile apps, real-time platforms, cloud backends, and agentic workflows.";
-const socialTitle = "Aashutosh Gandotra — Lead Full Stack Engineer";
-const socialDescription =
-  "Lead Full Stack Engineer specializing in React Native and Node.js, with 4+ years delivering production mobile platforms, real-time systems, and cloud backends.";
+const title = `${site.name} — ${site.role}`;
 
 export const viewport: Viewport = {
   themeColor: "#07090F",
@@ -31,20 +27,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.aashutoshgandotra.com"),
+  metadataBase: new URL(site.url),
   title: {
     default: title,
-    template: "%s | Aashutosh Gandotra",
+    template: `%s | ${site.name}`,
   },
-  description,
-  applicationName: "Aashutosh Gandotra",
+  description: site.description,
+  applicationName: site.name,
   keywords: [
-    "Aashutosh Gandotra",
-    "Full-Stack AI-Native Developer",
-    "AI-Native Developer",
-    "AI Agent Developer",
+    site.name,
+    site.role,
+    "React Native Engineer",
+    "Node.js Engineer",
+    "AI Workflows",
     "Model Context Protocol",
-    "Lead Full Stack Engineer",
     "React Native Developer",
     "Full Stack Engineer",
     "Node.js",
@@ -56,11 +52,9 @@ export const metadata: Metadata = {
     "Remote Full Stack Engineer",
     "Zaptric",
   ],
-  authors: [
-    { name: "Aashutosh Gandotra", url: "https://www.aashutoshgandotra.com" },
-  ],
-  creator: "Aashutosh Gandotra",
-  publisher: "Aashutosh Gandotra",
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
   category: "technology",
   referrer: "origin-when-cross-origin",
   formatDetection: {
@@ -69,7 +63,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://www.aashutoshgandotra.com",
+    canonical: site.url,
   },
   icons: {
     icon: [
@@ -81,10 +75,10 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: socialTitle,
-    description: socialDescription,
-    url: "https://www.aashutoshgandotra.com",
-    siteName: "Aashutosh Gandotra",
+    title,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
     locale: "en_IN",
     type: "profile",
     firstName: "Aashutosh",
@@ -93,8 +87,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: socialTitle,
-    description: socialDescription,
+    title,
+    description: site.description,
     creator: "@AashutoshGando3",
   },
   robots: {

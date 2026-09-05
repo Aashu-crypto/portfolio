@@ -119,16 +119,18 @@ export default function Home() {
       <div className="portfolio-shell">
         <header className="site-header">
           <a className="wordmark" href="#top" aria-label="Aashutosh Gandotra, home">
-            <span>AG</span>
-            <span className="wordmark-slash">/</span>
-            <span className="wordmark-ai">AI</span>
+            <span className="wordmark-symbol" aria-hidden="true">
+              AG<span>/</span>
+            </span>
+            <span className="wordmark-name">{site.name}</span>
           </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
             <a href="#work">Work</a>
-            <a href="#capabilities">Capabilities</a>
             <a href="#experience">Experience</a>
+            <a href="#capabilities">Skills</a>
             <a href="#about">About</a>
+            <a href="#contact">Contact</a>
           </nav>
 
           <a
@@ -150,40 +152,56 @@ export default function Home() {
                 {site.availability}
               </div>
 
-              <p className="eyebrow">{site.role}</p>
+              <p className="eyebrow">Full-stack engineer · Mobile, web & AI</p>
               <h1>
                 <span>I build intelligent products</span>
                 <span className="hero-accent">from interface to infrastructure.</span>
               </h1>
               <p className="hero-summary">
-                I combine React Native, Node.js, and production AI to turn
-                complex operations into clear, useful products that ship.
+                Currently <strong>{site.role}</strong> at Zaptric Mobility.
+                I build React Native apps and Node.js backends, with experience
+                in EV mobility, telehealth, and production AI.
               </p>
 
               <div className="hero-actions">
-                <a className="button button-primary" href="#work">
+                <a
+                  className="button button-primary"
+                  href={site.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View résumé
+                  <ArrowUpRight />
+                </a>
+                <a className="button button-secondary" href="#work">
                   Explore my work
                   <ArrowDown />
                 </a>
-                <a
-                  className="button button-secondary"
-                  href={"mailto:" + site.email}
-                >
-                  Start a conversation
-                  <ArrowUpRight />
+              </div>
+
+              <div
+                className="hero-links"
+                aria-label="Professional profiles and contact"
+              >
+                <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn <ArrowUpRight />
+                </a>
+                <a href={site.github} target="_blank" rel="noopener noreferrer">
+                  GitHub <ArrowUpRight />
+                </a>
+                <a href="#contact">
+                  Get in touch <ArrowDown />
                 </a>
               </div>
 
               <p className="hero-location">
-                Based in {site.location}
-                <span aria-hidden="true">/</span>
-                Working worldwide
+                Based in {site.location} · {site.remote}
               </p>
             </div>
 
             <figure className="hero-visual">
               <div className="hero-visual-topline">
-                <span>PRODUCT SYSTEM / 01</span>
+                <span>ZAPTRIC / MOBILITY</span>
                 <span className="live-status">
                   <span aria-hidden="true" />
                   IN PRODUCTION
@@ -223,22 +241,26 @@ export default function Home() {
             </figure>
           </section>
 
-          <ul className="signal-strip" aria-label="Core practice areas">
+          <ul className="signal-strip" aria-label="Professional highlights">
             <li>
-              <span>Mobile products</span>
-              <strong>React Native</strong>
+              <span>Current role</span>
+              <strong>Lead Full Stack Engineer</strong>
+              <small>Zaptric Mobility · since Aug 2024</small>
             </li>
             <li>
-              <span>Full-stack ownership</span>
-              <strong>Web + API</strong>
+              <span>Mobile ownership</span>
+              <strong>Two React Native apps</strong>
+              <small>Driver + supervisor workflows</small>
             </li>
             <li>
-              <span>AI-native workflows</span>
+              <span>Across the stack</span>
+              <strong>React + Node.js</strong>
+              <small>Dashboards, services + PostgreSQL</small>
+            </li>
+            <li>
+              <span>Applied AI</span>
               <strong>Gemini + MCP</strong>
-            </li>
-            <li>
-              <span>Production delivery</span>
-              <strong>AWS + Docker</strong>
+              <small>Production operations agent</small>
             </li>
           </ul>
 
@@ -248,10 +270,12 @@ export default function Home() {
                 <span>01</span>
                 Selected work
               </p>
-              <h2>Systems I have taken beyond the demo.</h2>
+              <h2>
+                Selected work.<br />Shipped to production.
+              </h2>
               <p>
-                Product thinking, engineering depth, and operational ownership
-                in the same loop.
+                Two products that show how I work, what I own, and what I have
+                delivered across mobile, backend, and AI.
               </p>
             </div>
 
@@ -264,6 +288,22 @@ export default function Home() {
 
                 return (
                   <article className={projectClassName} key={project.name}>
+                    <header className="project-heading">
+                      <div>
+                        <p className="project-kicker">{project.kicker}</p>
+                        <h3>{project.name}</h3>
+                      </div>
+                      <dl className="project-role">
+                        <div>
+                          <dt>My role</dt>
+                          <dd>{project.role}</dd>
+                        </div>
+                        <div>
+                          <dt>Context</dt>
+                          <dd>{project.context}</dd>
+                        </div>
+                      </dl>
+                    </header>
                     <div className="project-visual">
                       <span className="project-visual-number" aria-hidden="true">
                         {project.number}
@@ -312,14 +352,7 @@ export default function Home() {
 
                     <div className="project-content">
                       <div className="project-title-block">
-                        <p className="project-kicker">{project.kicker}</p>
-                        <h3>{project.name}</h3>
                         <p className="project-headline">{project.headline}</p>
-                      </div>
-
-                      <div className="project-details">
-                        <p className="project-summary">{project.summary}</p>
-
                         <ul
                           className="capability-tags"
                           aria-label={project.name + " capabilities"}
@@ -328,8 +361,16 @@ export default function Home() {
                             <li key={capability}>{capability}</li>
                           ))}
                         </ul>
+                      </div>
 
-                        <ul className="contribution-list">
+                      <div className="project-details">
+                        <p className="project-summary">{project.summary}</p>
+
+                        <h4 className="contribution-heading">What I shipped</h4>
+                        <ul
+                          className="contribution-list"
+                          aria-label={project.name + " contributions"}
+                        >
                           {project.contributions.map((contribution) => (
                             <li key={contribution}>
                               <span aria-hidden="true">↳</span>
@@ -370,19 +411,67 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="page-section experience-section" id="experience">
+            <div className="section-heading">
+              <p className="section-kicker">
+                <span>02</span>
+                Experience
+              </p>
+              <h2>A career built around ownership.</h2>
+              <p>
+                Software development since 2023, following a foundation in
+                computer science education. Now leading full-stack delivery at Zaptric.
+              </p>
+            </div>
+
+            <ol className="experience-list">
+              {experience.map((job, index) => (
+                <li key={job.company + job.dates}>
+                  <span className="experience-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="experience-role">
+                    <h3>{job.role}</h3>
+                    <p>{job.company}</p>
+                    <div className="experience-meta">
+                      <p>{job.dates}</p>
+                      <p>{job.location}</p>
+                    </div>
+                  </div>
+                  <div className="experience-description">
+                    {job.bullets.map((bullet) => (
+                      <p key={bullet}>{bullet}</p>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <div className="experience-links">
+              <span>Want the full picture?</span>
+              <a href={site.resume} target="_blank" rel="noopener noreferrer">
+                View résumé <ArrowUpRight />
+              </a>
+              <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn <ArrowUpRight />
+              </a>
+            </div>
+          </section>
+
           <section
             className="page-section capabilities-section"
             id="capabilities"
           >
             <div className="section-heading">
               <p className="section-kicker">
-                <span>02</span>
-                How I build
+                <span>03</span>
+                Technical skills
               </p>
-              <h2>AI-native, with the full stack around it.</h2>
+              <h2>
+                Engineering depth.<br />Across the stack.
+              </h2>
               <p>
-                The model is one component. The product, data, tools, guardrails,
-                and operating reality make it useful.
+                The tools I use to build and run products, grounded in the work
+                above.
               </p>
             </div>
 
@@ -400,43 +489,6 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </section>
-
-          <section className="page-section experience-section" id="experience">
-            <div className="section-heading">
-              <p className="section-kicker">
-                <span>03</span>
-                Experience
-              </p>
-              <h2>A career built around ownership.</h2>
-              <p>
-                From teaching fundamentals to leading production systems across
-                mobile, web, backend, and AI.
-              </p>
-            </div>
-
-            <ol className="experience-list">
-              {experience.map((job, index) => (
-                <li key={job.company + job.dates}>
-                  <span className="experience-index">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="experience-role">
-                    <h3>{job.role}</h3>
-                    <p>{job.company}</p>
-                  </div>
-                  <div className="experience-description">
-                    {job.bullets.map((bullet) => (
-                      <p key={bullet}>{bullet}</p>
-                    ))}
-                  </div>
-                  <div className="experience-meta">
-                    <p>{job.dates}</p>
-                    <p>{job.location}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
           </section>
 
           <section className="page-section about-section" id="about">
@@ -460,12 +512,11 @@ export default function Home() {
                 <span>04</span>
                 A little context
               </p>
-              <h2>I care about the seams between product and engineering.</h2>
+              <h2>An engineer who sees the whole product.</h2>
               <p className="about-lede">
-                AI-native is a way of building, not a feature label. I connect
-                models to the context, tools, permissions, and interfaces that
-                let them do useful work—then engineer the surrounding product so
-                it earns trust.
+                My work spans the app someone opens, the services behind it,
+                and the tools an operations team uses every day. I enjoy connecting
+                those pieces and taking responsibility for how they work together.
               </p>
               <p>
                 I moved from teaching computer science in Jammu to owning
@@ -489,19 +540,33 @@ export default function Home() {
             <div>
               <p className="section-kicker">
                 <span>05</span>
-                Say hello
+                Open to opportunities
               </p>
-              <h2>Need someone who can own the whole path?</h2>
+              <h2>Let’s talk about your engineering team.</h2>
             </div>
             <div className="contact-action">
               <p>
-                I am open to conversations about ambitious mobile, full-stack,
-                and AI-native products.
+                Hiring for full-stack or React Native roles? I bring experience
+                across mobile, backend, and production AI. Let’s talk about the
+                role and what your team is building.
               </p>
-              <a href={"mailto:" + site.email}>
+              <a
+                className="contact-email"
+                href={"mailto:" + site.email + "?subject=" +
+                  encodeURIComponent("Engineering opportunity for Aashutosh")}
+              >
                 {site.email}
                 <ArrowUpRight />
               </a>
+              <p className="client-note">
+                Have a product in mind? I’m also open to select projects.{" "}
+                <a
+                  href={"mailto:" + site.email + "?subject=" +
+                    encodeURIComponent("Project collaboration with Aashutosh")}
+                >
+                  Discuss a project <ArrowUpRight />
+                </a>
+              </p>
             </div>
           </section>
         </main>

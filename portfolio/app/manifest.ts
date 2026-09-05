@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/lib/content";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Aashutosh Gandotra",
+    name: site.name,
     short_name: "AG",
-    description:
-      "Full-stack AI-native developer building production mobile apps, real-time platforms, cloud backends, and agentic workflows.",
+    description: site.description,
     start_url: "/",
     display: "standalone",
     background_color: "#07090F",
